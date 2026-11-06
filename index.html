@@ -4,92 +4,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<title>MAX OFFICIAL SITE | Classified Information</title>
+<meta name="theme-color" content="#fff7e9">
+<title>MAX OFFICIAL SITE</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap');
-
 :root {
-  --bg:#090909;
-  --panel:#111111;
-  --panel2:#151515;
-  --red:#d52b35;
-  --white:#f2f0ed;
-  --muted:#777;
-  --line:#292929;
-  --mono:'DM Mono',monospace;
-  --display:'Barlow Condensed',sans-serif;
+  --orange:#ff6900;
+  --neon:#ff8c00;
+  --yellow:#ffca28;
+  --black:#171717;
+  --cream:#fff7e9;
+  --white:#fff;
+  --grey:#777;
 }
 
 * {box-sizing:border-box}
+
 html {scroll-behavior:smooth}
+
 body {
   margin:0;
-  background:var(--bg);
-  color:var(--white);
-  font-family:Inter,sans-serif;
-  overflow-x:hidden;
+  background:var(--cream);
+  color:var(--black);
+  font-family:Arial,Helvetica,sans-serif;
 }
-body:before {
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:10;
-  opacity:.12;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
-}
+
 a {color:inherit;text-decoration:none}
 button {font:inherit;cursor:pointer}
 
-.topline {
-  height:3px;
-  background:var(--red);
-}
 header {
   position:sticky;
   top:0;
   z-index:20;
-  background:rgba(9,9,9,.94);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
+  background:rgba(255,247,233,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:2px solid var(--black);
 }
+
 .nav {
-  max-width:1250px;
+  max-width:1150px;
   margin:auto;
-  padding:19px 25px;
+  padding:17px 25px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
 }
+
 .logo {
-  font-family:var(--display);
-  font-weight:900;
-  font-size:29px;
-  letter-spacing:1px;
+  font-size:27px;
+  font-weight:1000;
+  letter-spacing:-2px;
 }
-.logo span {color:var(--red)}
-.navlinks {
+
+.logo span {color:var(--orange)}
+
+.links {
   display:flex;
-  gap:26px;
-  align-items:center;
+  gap:27px;
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
 }
-.navlinks a {
-  font-size:10px;
-  color:#aaa;
-  font-family:var(--mono);
-  letter-spacing:1px;
-  transition:.2s;
-}
-.navlinks a:hover {color:white}
-.menu-btn {
+
+.links a:hover {color:var(--orange)}
+
+.menu {
   display:none;
-  color:white;
-  background:none;
-  border:1px solid var(--line);
-  padding:8px 12px;
+  background:var(--orange);
+  border:2px solid var(--black);
+  padding:9px 13px;
+  font-weight:900;
 }
 
 .container {
@@ -97,571 +81,560 @@ header {
   margin:auto;
   padding:0 25px;
 }
-.mono {
-  font-family:var(--mono);
-  color:var(--muted);
-  font-size:10px;
-  letter-spacing:2px;
-}
-.red {color:var(--red)}
 
 .hero {
-  min-height:660px;
-  display:flex;
-  align-items:center;
+  min-height:570px;
   position:relative;
   overflow:hidden;
-  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
   background:
-    radial-gradient(ellipse at 78% 48%,rgba(145,20,30,.13),transparent 43%),
-    linear-gradient(110deg,#090909 40%,#151010 100%);
+    radial-gradient(circle at 80% 40%,#ffd38b 0,transparent 34%),
+    #fff0d7;
+  border-bottom:2px solid var(--black);
 }
-.hero:after {
-  content:"";
-  position:absolute;
-  right:7%;
-  top:50%;
-  transform:translateY(-50%);
-  width:390px;
-  height:390px;
-  border:1px solid rgba(213,43,53,.12);
-  border-radius:50%;
-  box-shadow:0 0 0 45px rgba(213,43,53,.018),0 0 0 90px rgba(213,43,53,.012);
-}
+
 .hero-content {
   position:relative;
   z-index:2;
-  padding:100px 0;
+  padding:80px 0;
 }
-.hero-label {
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:30px;
-}
-.dot {
-  width:7px;
-  height:7px;
-  background:var(--red);
-  border-radius:50%;
-  box-shadow:0 0 12px var(--red);
-  animation:pulse 2s infinite;
-}
-@keyframes pulse {
-  50% {opacity:.3}
-}
-.hero h1 {
-  font-family:var(--display);
-  font-size:clamp(75px,13vw,155px);
-  line-height:.78;
-  margin:0;
-  letter-spacing:-3px;
+
+.label {
+  display:inline-block;
+  background:var(--orange);
+  color:white;
+  padding:9px 14px;
+  border:2px solid var(--black);
+  font-size:11px;
   font-weight:900;
-  text-transform:uppercase;
+  transform:rotate(-2deg);
 }
+
+.hero h1 {
+  font-size:clamp(75px,13vw,145px);
+  line-height:.8;
+  letter-spacing:-9px;
+  margin:30px 0;
+  font-weight:1000;
+}
+
 .hero h1 span {
+  color:var(--orange);
   display:block;
-  color:transparent;
-  -webkit-text-stroke:1px #777;
-  margin-top:15px;
+  -webkit-text-stroke:2px var(--black);
+  paint-order:stroke fill;
 }
-.hero-description {
-  color:#999;
-  max-width:430px;
-  font-size:13px;
-  line-height:1.9;
-  margin-top:35px;
+
+.hero p {
+  max-width:390px;
+  color:#555;
+  font-size:14px;
+  line-height:1.7;
 }
-.hero-actions {
+
+.hero-buttons {
   display:flex;
   gap:12px;
-  margin-top:30px;
+  margin-top:28px;
   flex-wrap:wrap;
 }
+
 .btn {
-  padding:14px 20px;
-  font-size:10px;
-  font-family:var(--mono);
-  letter-spacing:1px;
-  border:1px solid var(--line);
-  background:transparent;
-  color:white;
-  transition:.2s;
-}
-.btn-primary {
-  background:var(--red);
-  border-color:var(--red);
-}
-.btn:hover {transform:translateY(-2px);border-color:white}
-.btn-primary:hover {background:#a91c27}
-.hero-code {
-  position:absolute;
-  right:30px;
-  bottom:30px;
-  color:#555;
-  font-family:var(--mono);
-  font-size:9px;
-  text-align:right;
-  line-height:2;
-}
-
-.ticker {
-  border-bottom:1px solid var(--line);
-  padding:13px 0;
-  overflow:hidden;
-  white-space:nowrap;
-  background:#101010;
-}
-.ticker-track {
   display:inline-block;
-  animation:scroll 32s linear infinite;
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:2px;
-  color:#999;
-}
-.ticker-track span {color:var(--red);padding:0 35px}
-@keyframes scroll {
-  to {transform:translateX(-50%)}
-}
-
-section {padding:95px 0}
-.section-head {
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:20px;
-  margin-bottom:35px;
-}
-.section-head h2 {
-  font-family:var(--display);
-  font-size:55px;
-  text-transform:uppercase;
-  margin:8px 0 0;
-  line-height:1;
-}
-.section-head p {
+  padding:14px 20px;
+  background:white;
+  border:2px solid var(--black);
   font-size:11px;
-  color:#777;
-  max-width:260px;
-  line-height:1.8;
+  font-weight:900;
+  text-transform:uppercase;
+  transition:.2s;
+  box-shadow:4px 4px 0 var(--black);
 }
 
-.leak-grid {
+.btn.orange {
+  background:var(--orange);
+  color:white;
+}
+
+.btn:hover {
+  transform:translate(3px,3px);
+  box-shadow:1px 1px 0 var(--black);
+}
+
+.hero-decoration {
+  position:absolute;
+  right:9%;
+  top:50%;
+  transform:translateY(-50%) rotate(8deg);
+  font-size:210px;
+  filter:drop-shadow(8px 10px 0 rgba(0,0,0,.15));
+  user-select:none;
+}
+
+.star {
+  position:absolute;
+  color:var(--orange);
+  font-size:55px;
+}
+
+.star.one {right:9%;top:15%}
+.star.two {right:39%;bottom:13%;font-size:35px}
+
+.tape {
+  height:13px;
+  background:repeating-linear-gradient(
+    120deg,
+    var(--orange) 0 18px,
+    var(--yellow) 18px 36px
+  );
+  border-bottom:2px solid var(--black);
+}
+
+section {padding:85px 0}
+
+.section-top {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:32px;
+}
+
+.section-top h2 {
+  font-size:clamp(38px,6vw,65px);
+  margin:8px 0 0;
+  letter-spacing:-3px;
+  font-weight:1000;
+}
+
+.section-top h2 span {color:var(--orange)}
+
+.small-label {
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--orange);
+}
+
+.section-top p {
+  max-width:230px;
+  font-size:12px;
+  line-height:1.7;
+  color:var(--grey);
+}
+
+.leaks {
   display:grid;
   grid-template-columns:1.3fr 1fr 1fr;
-  gap:13px;
+  gap:16px;
 }
-.leak-card {
-  min-height:280px;
-  padding:25px;
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(145deg,#181818,#0e0e0e);
-  border:1px solid var(--line);
+
+.card {
+  min-height:310px;
+  border:2px solid var(--black);
+  border-radius:13px;
+  padding:23px;
+  background:white;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  transition:.3s;
+  position:relative;
+  overflow:hidden;
+  transition:.2s;
 }
-.leak-card:hover {
-  border-color:#6e252a;
-  transform:translateY(-4px);
+
+.card:hover {
+  transform:translateY(-6px) rotate(-1deg);
+  box-shadow:6px 7px 0 var(--black);
 }
-.leak-card.featured {
-  background:
-    radial-gradient(ellipse at 80% 30%,rgba(170,20,30,.19),transparent 60%),
-    #121212;
+
+.card.featured {
+  background:#ffb044;
 }
+
 .card-number {
-  font-family:var(--mono);
-  color:#555;
   font-size:10px;
-}
-.card-icon {
-  font-size:42px;
-  opacity:.7;
-  filter:grayscale(1);
-}
-.leak-card h3 {
-  font-family:var(--display);
-  font-size:32px;
-  margin:0 0 8px;
-  text-transform:uppercase;
-}
-.leak-card p {
-  font-size:11px;
-  line-height:1.8;
-  color:#888;
-  margin:0;
-}
-.tag {
-  display:inline-block;
-  font-family:var(--mono);
-  font-size:9px;
+  font-weight:900;
   letter-spacing:1px;
-  color:#e7a0a0;
-  border:1px solid #62272b;
-  padding:6px 9px;
+}
+
+.card-emoji {
+  font-size:75px;
+  text-align:center;
+  filter:drop-shadow(4px 5px 0 rgba(0,0,0,.15));
+}
+
+.card h3 {
+  font-size:30px;
+  letter-spacing:-1px;
+  margin:0 0 8px;
+  font-weight:1000;
+}
+
+.card p {
+  font-size:12px;
+  line-height:1.6;
+  color:#555;
+}
+
+.pill {
+  display:inline-block;
+  background:var(--black);
+  color:white;
+  border-radius:30px;
+  padding:7px 12px;
+  font-size:9px;
+  font-weight:900;
   width:max-content;
 }
-.tag.grey {color:#888;border-color:#333}
 
 .archive {
-  background:#0d0d0d;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+  background:#fff0d7;
+  border-top:2px solid var(--black);
+  border-bottom:2px solid var(--black);
 }
+
 .archive-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:13px;
+  gap:16px;
 }
-.archive-card {
-  border:1px solid var(--line);
-  background:#121212;
+
+.costume {
+  background:white;
+  border:2px solid var(--black);
+  border-radius:13px;
   overflow:hidden;
-  transition:.3s;
+  transition:.2s;
 }
-.archive-card:hover {border-color:#773037}
-.archive-image {
-  height:220px;
-  background:
-    radial-gradient(ellipse at center,rgba(145,25,35,.2),transparent 60%),
-    linear-gradient(135deg,#202020,#080808);
+
+.costume:hover {
+  transform:translateY(-5px);
+  box-shadow:5px 6px 0 var(--orange);
+}
+
+.costume-visual {
+  height:245px;
+  background:#ffb044;
   display:flex;
   justify-content:center;
   align-items:center;
+  font-size:105px;
   position:relative;
   overflow:hidden;
 }
-.archive-image:before {
+
+.costume-visual.alt {background:#ffd4a0}
+.costume-visual.future {background:#ffcf5d}
+
+.costume-visual:after {
   content:"";
-  width:120px;
-  height:150px;
-  border:1px solid #393939;
-  background:linear-gradient(145deg,#252525,#111);
-  transform:rotate(-7deg);
-  box-shadow:15px 12px 0 #101010;
-}
-.archive-image span {
   position:absolute;
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:3px;
-  color:#777;
+  width:160px;
+  height:160px;
+  border:3px dashed rgba(0,0,0,.2);
+  border-radius:50%;
 }
-.archive-info {padding:20px}
-.archive-info h3 {
-  font-family:var(--display);
+
+.costume-info {padding:20px}
+
+.costume-info h3 {
   font-size:27px;
-  margin:10px 0 5px;
+  margin:10px 0;
+  font-weight:1000;
 }
-.archive-info p {font-size:11px;color:#777;line-height:1.7}
-.archive-meta {
-  display:flex;
-  justify-content:space-between;
-  font-family:var(--mono);
-  font-size:9px;
+
+.costume-info p {
+  font-size:11px;
   color:#777;
-  margin-top:20px;
 }
+
+.costume-info .pill {background:var(--orange)}
 
 .events-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:13px;
+  gap:15px;
 }
+
 .event {
-  border:1px solid var(--line);
-  padding:27px;
-  background:#111;
+  background:white;
+  border:2px solid var(--black);
+  border-radius:12px;
+  padding:25px;
   display:flex;
-  gap:22px;
-  align-items:center;
-}
-.event-date {
-  min-width:65px;
-  border-right:1px solid var(--line);
-  padding-right:20px;
-  text-align:center;
-}
-.event-date strong {
-  display:block;
-  font-family:var(--display);
-  font-size:37px;
-}
-.event-date small {
-  font-family:var(--mono);
-  font-size:9px;
-  color:var(--red);
-}
-.event h3 {
-  font-family:var(--display);
-  font-size:25px;
-  margin:0 0 6px;
-}
-.event p {font-size:10px;color:#777;line-height:1.7;margin:0}
-.event-status {
-  font-family:var(--mono);
-  color:#aaa;
-  font-size:9px;
-  margin-top:12px;
-}
-
-.intel {
-  background:
-    radial-gradient(ellipse at 10% 50%,rgba(150,20,30,.10),transparent 60%),
-    #111;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.intel-box {
-  border:1px solid #373737;
-  padding:35px;
-  position:relative;
-}
-.intel-box:before {
-  content:"CONFIDENTIAL";
-  position:absolute;
-  top:20px;
-  right:20px;
-  color:#6d292e;
-  border:1px solid #6d292e;
-  padding:7px 12px;
-  font-family:var(--mono);
-  font-size:9px;
-  transform:rotate(3deg);
-}
-.intel-box h3 {
-  font-family:var(--display);
-  font-size:40px;
-  margin:15px 0;
-}
-.intel-box p {
-  font-size:12px;
-  line-height:2;
-  color:#999;
-  max-width:650px;
-}
-.redacted {
-  background:#ddd;
-  color:#ddd;
-  padding:0 10px;
-  user-select:none;
-}
-
-.announcement-list {border-top:1px solid var(--line)}
-.announcement {
-  display:grid;
-  grid-template-columns:120px 1fr 100px;
   gap:20px;
   align-items:center;
-  padding:24px 10px;
-  border-bottom:1px solid var(--line);
-  transition:.2s;
 }
-.announcement:hover {background:#111}
-.announcement time {
+
+.event-icon {
+  width:65px;
+  height:65px;
+  background:#ffca79;
+  border:2px solid var(--black);
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  font-size:30px;
+  flex-shrink:0;
+}
+
+.event h3 {
+  margin:0 0 8px;
+  font-size:21px;
+}
+
+.event p {
+  margin:0;
+  font-size:11px;
+  line-height:1.7;
   color:#777;
-  font-family:var(--mono);
-  font-size:10px;
 }
-.announcement h3 {
+
+.event small {
+  display:block;
+  margin-top:10px;
+  color:var(--orange);
+  font-weight:900;
+  font-size:9px;
+}
+
+.clue-area {
+  background:var(--black);
+  color:white;
+  border-radius:17px;
+  padding:40px;
+  position:relative;
+  overflow:hidden;
+}
+
+.clue-area:after {
+  content:"?";
+  position:absolute;
+  right:40px;
+  top:-35px;
+  font-size:240px;
+  font-weight:1000;
+  color:rgba(255,255,255,.06);
+}
+
+.clue-area h2 {
+  font-size:43px;
+  margin:10px 0;
+  position:relative;
+  z-index:1;
+}
+
+.clue-area h2 span {color:var(--orange)}
+
+.clue-area p {
+  font-size:12px;
+  color:#bbb;
+  max-width:430px;
+  line-height:1.8;
+  position:relative;
+  z-index:1;
+}
+
+.news-list {border-top:2px solid var(--black)}
+
+.news {
+  padding:22px 10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  border-bottom:1px solid #ddd;
+}
+
+.news h3 {
   font-size:14px;
   margin:0 0 5px;
 }
-.announcement p {
+
+.news p {
+  font-size:11px;
   color:#777;
-  font-size:10px;
   margin:0;
 }
-.announcement .tag {justify-self:end}
 
-.final-cta {
+.news time {
+  font-size:10px;
+  font-weight:900;
+  color:var(--orange);
+  white-space:nowrap;
+}
+
+.final {
+  background:#ffb044;
   text-align:center;
-  padding:110px 20px;
-  background:radial-gradient(ellipse at center,rgba(150,20,30,.13),transparent 60%);
+  padding:85px 20px;
+  border-top:2px solid var(--black);
 }
-.final-cta h2 {
-  font-family:var(--display);
-  font-size:clamp(55px,10vw,100px);
-  line-height:.85;
-  margin:20px 0;
+
+.final h2 {
+  font-size:clamp(50px,9vw,90px);
+  font-weight:1000;
+  letter-spacing:-5px;
+  line-height:.9;
+  margin:15px 0;
 }
-.final-cta p {
+
+.final p {
   font-size:12px;
-  color:#888;
-  line-height:1.8;
+  color:#444;
+  margin:25px 0;
 }
 
 footer {
-  border-top:1px solid var(--line);
-  padding:30px 25px;
-  background:#080808;
+  background:var(--black);
+  color:white;
+  padding:28px 25px;
 }
+
 .footer-inner {
-  max-width:1150px;
+  max-width:1100px;
   margin:auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:20px;
   flex-wrap:wrap;
-}
-.footer-logo {
-  font-family:var(--display);
-  font-size:25px;
-  font-weight:900;
-}
-.footer-logo span {color:var(--red)}
-footer p {
-  font-family:var(--mono);
-  font-size:9px;
-  color:#666;
-  line-height:1.8;
+  gap:15px;
 }
 
+.footer-inner p {
+  font-size:10px;
+  color:#aaa;
+}
+
+.footer-logo {
+  font-size:24px;
+  font-weight:1000;
+}
+
+.footer-logo span {color:var(--orange)}
+
 @media(max-width:750px) {
-  .navlinks {
+  .links {
     display:none;
     position:absolute;
-    top:66px;
+    top:65px;
     left:0;
     right:0;
-    background:#0b0b0b;
+    background:var(--cream);
     padding:25px;
-    border-bottom:1px solid var(--line);
     flex-direction:column;
-    align-items:flex-start;
+    border-bottom:2px solid var(--black);
   }
-  .navlinks.open {display:flex}
-  .menu-btn {display:block}
-  .hero {min-height:590px}
-  .hero:after {right:-180px;opacity:.5}
-  .leak-grid,.archive-grid {grid-template-columns:1fr}
-  .events-grid {grid-template-columns:1fr}
-  .section-head {align-items:flex-start;flex-direction:column}
-  .section-head h2 {font-size:45px}
-  .announcement {grid-template-columns:75px 1fr}
-  .announcement .tag {display:none}
-  .intel-box {padding:25px}
-  .intel-box:before {position:static;display:inline-block}
+
+  .links.open {display:flex}
+  .menu {display:block}
+
+  .hero {min-height:560px}
+  .hero-decoration {right:-60px;opacity:.22;font-size:180px}
+  .hero h1 {letter-spacing:-5px}
+
+  .leaks,.archive-grid,.events-grid {
+    grid-template-columns:1fr;
+  }
+
+  .section-top {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .clue-area {padding:25px}
+  .clue-area h2 {font-size:34px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="topline"></div>
-
 <header>
   <nav class="nav">
-    <a href="#home" class="logo">MAX<span>.</span></a>
+    <a class="logo" href="#home">MAX<span>.</span></a>
 
-    <div class="navlinks" id="navlinks">
-      <a href="#home">HOME</a>
-      <a href="#leaks">LEAKS</a>
-      <a href="#archive">ARCHIVE</a>
-      <a href="#events">EVENTS</a>
-      <a href="#intel">INDIZIEN</a>
-      <a href="#news">NEWS</a>
+    <div class="links" id="links">
+      <a href="#home">Home</a>
+      <a href="#leaks">Leaks</a>
+      <a href="#archive">Kostüme</a>
+      <a href="#events">Events</a>
+      <a href="#clues">Indizien</a>
+      <a href="#news">News</a>
     </div>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰ MENU</button>
+    <button class="menu" onclick="toggleMenu()">☰</button>
   </nav>
 </header>
 
 <main>
 
-<!-- HERO -->
 <div class="hero" id="home">
   <div class="container hero-content">
-    <div class="hero-label mono">
-      <span class="dot"></span>
-      OFFICIAL WEBSITE · EST. 2026
-    </div>
+    <span class="label">✦ OFFICIAL MAX WEBSITE</span>
 
-    <h1>
-      MAX
-      <span>OFFICIAL</span>
-    </h1>
+    <h1>MAX <span>OFFICIAL</span></h1>
 
-    <p class="hero-description">
-      Welcome to the official information archive.
-      Discover exclusive leaks, mysterious clues,
-      upcoming costumes, events and everything
-      happening behind the scenes.
+    <p>
+      Willkommen auf meiner offiziellen Website.
+      Kostüme, Projekte, Events und ein paar Geheimnisse.
     </p>
 
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#leaks">EXPLORE THE LEAKS ↗</a>
-      <a class="btn" href="#events">UPCOMING EVENTS</a>
+    <div class="hero-buttons">
+      <a href="#leaks" class="btn orange">Entdecken ↗</a>
+      <a href="#archive" class="btn">Kostüm-Archiv</a>
     </div>
   </div>
 
-  <div class="hero-code">
-    SYSTEM ID: MAX-001<br>
-    ACCESS LEVEL: PUBLIC<br>
-    LOCATION: CLASSIFIED<br>
-    STATUS: ACTIVE
-  </div>
+  <div class="hero-decoration">🎁</div>
+  <div class="star one">✦</div>
+  <div class="star two">✧</div>
 </div>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-track">
-    CLASSIFIED INFORMATION <span>✦</span>
-    MAX OFFICIAL SITE <span>✦</span>
-    NEW LEAKS COMING SOON <span>✦</span>
-    THE NEXT CHAPTER IS LOADING <span>✦</span>
-    CLASSIFIED INFORMATION <span>✦</span>
-    MAX OFFICIAL SITE <span>✦</span>
-    NEW LEAKS COMING SOON <span>✦</span>
-    THE NEXT CHAPTER IS LOADING <span>✦</span>
-  </div>
-</div>
+<div class="tape"></div>
 
-<!-- LEAKS -->
 <section id="leaks">
   <div class="container">
-    <div class="section-head">
+    <div class="section-top">
       <div>
-        <div class="mono">01 / EXCLUSIVE INFORMATION</div>
-        <h2>Latest <span class="red">Leaks.</span></h2>
+        <div class="small-label">01 / EXKLUSIV</div>
+        <h2>New <span>Leaks.</span></h2>
       </div>
-      <p>Some things are better kept secret. Others are waiting to be discovered.</p>
+      <p>Ein paar Dinge sind noch geheim ...</p>
     </div>
 
-    <div class="leak-grid">
+    <div class="leaks">
 
-      <article class="leak-card featured">
-        <div class="card-number">LEAK #001 · COSTUME PROJECT</div>
-        <div class="card-icon">◈</div>
+      <article class="card featured">
+        <span class="card-number">LEAK #001</span>
+        <div class="card-emoji">🎁</div>
         <div>
-          <span class="tag">UNDER INVESTIGATION</span>
-          <h3>THE NEXT COSTUME</h3>
-          <p>Something new is being prepared. The first clues have already appeared.</p>
+          <span class="pill">COMING SOON</span>
+          <h3>NEW COSTUME</h3>
+          <p>Ein neues Kostüm ist in Arbeit.</p>
         </div>
       </article>
 
-      <article class="leak-card">
-        <div class="card-number">LEAK #002 · EVENT</div>
-        <div class="card-icon">◉</div>
+      <article class="card">
+        <span class="card-number">LEAK #002</span>
+        <div class="card-emoji">🧡</div>
         <div>
-          <span class="tag grey">CLASSIFIED</span>
-          <h3>SECRET EVENT</h3>
-          <p>A mysterious event. Details will be revealed at the right time.</p>
-        </div>
-      </article>
-
-      <article class="leak-card">
-        <div class="card-number">LEAK #003 · PROJECT</div>
-        <div class="card-icon">⌁</div>
-        <div>
-          <span class="tag grey">COMING SOON</span>
+          <span class="pill">IN PROGRESS</span>
           <h3>NEW PROJECT</h3>
-          <p>A new chapter is in development. More information coming soon.</p>
+          <p>Etwas Neues entsteht.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-number">LEAK #003</span>
+        <div class="card-emoji">🎉</div>
+        <div>
+          <span class="pill">SECRET</span>
+          <h3>SECRET EVENT</h3>
+          <p>Weitere Informationen folgen.</p>
         </div>
       </article>
 
@@ -669,55 +642,42 @@ footer p {
   </div>
 </section>
 
-<!-- ARCHIVE -->
 <section class="archive" id="archive">
   <div class="container">
-    <div class="section-head">
+    <div class="section-top">
       <div>
-        <div class="mono">02 / HISTORICAL RECORDS</div>
-        <h2>Costume <span class="red">Archive.</span></h2>
+        <div class="small-label">02 / KREATIVE PROJEKTE</div>
+        <h2>Costume <span>Archive.</span></h2>
       </div>
-      <p>Every costume has a story. Every year leaves a trace.</p>
+      <p>Jedes Jahr ein neues Design.</p>
     </div>
 
     <div class="archive-grid">
 
-      <article class="archive-card">
-        <div class="archive-image"><span>FILE_2026</span></div>
-        <div class="archive-info">
-          <span class="tag">ARCHIVED</span>
-          <h3>COSTUME 2026</h3>
-          <p>The beginning of a new Halloween tradition.</p>
-          <div class="archive-meta">
-            <span>YEAR: 2026</span>
-            <span>FILE #001</span>
-          </div>
+      <article class="costume">
+        <div class="costume-visual">👻</div>
+        <div class="costume-info">
+          <span class="pill">COMPLETED</span>
+          <h3>Costume 2026</h3>
+          <p>Das Halloween-Projekt 2026.</p>
         </div>
       </article>
 
-      <article class="archive-card">
-        <div class="archive-image"><span>FILE_2027</span></div>
-        <div class="archive-info">
-          <span class="tag grey">IN DEVELOPMENT</span>
-          <h3>COSTUME 2027</h3>
-          <p>Currently classified. Only a few clues are available.</p>
-          <div class="archive-meta">
-            <span>YEAR: 2027</span>
-            <span>FILE #002</span>
-          </div>
+      <article class="costume">
+        <div class="costume-visual alt">🎁</div>
+        <div class="costume-info">
+          <span class="pill">IN DEVELOPMENT</span>
+          <h3>Costume 2027</h3>
+          <p>Das nächste große Projekt.</p>
         </div>
       </article>
 
-      <article class="archive-card">
-        <div class="archive-image"><span>FILE_2028</span></div>
-        <div class="archive-info">
-          <span class="tag grey">UNKNOWN</span>
-          <h3>COSTUME 2028</h3>
-          <p>The future remains a mystery.</p>
-          <div class="archive-meta">
-            <span>YEAR: 2028</span>
-            <span>FILE #003</span>
-          </div>
+      <article class="costume">
+        <div class="costume-visual future">❔</div>
+        <div class="costume-info">
+          <span class="pill">CLASSIFIED</span>
+          <h3>Costume 2028</h3>
+          <p>Was wohl als Nächstes kommt?</p>
         </div>
       </article>
 
@@ -725,40 +685,33 @@ footer p {
   </div>
 </section>
 
-<!-- EVENTS -->
 <section id="events">
   <div class="container">
-    <div class="section-head">
+    <div class="section-top">
       <div>
-        <div class="mono">03 / WHAT'S HAPPENING</div>
-        <h2>Upcoming <span class="red">Events.</span></h2>
+        <div class="small-label">03 / TERMINE</div>
+        <h2>Upcoming <span>Events.</span></h2>
       </div>
-      <p>Stay informed. The next big moment might be closer than you think.</p>
+      <p>Die nächsten Highlights.</p>
     </div>
 
     <div class="events-grid">
 
       <article class="event">
-        <div class="event-date">
-          <strong>?</strong>
-          <small>DATE TBA</small>
-        </div>
+        <div class="event-icon">🎃</div>
         <div>
-          <h3>THE NEXT BIG EVENT</h3>
-          <p>Something is being planned. More information will follow.</p>
-          <div class="event-status">● ANNOUNCEMENT PENDING</div>
+          <h3>Halloween 2027</h3>
+          <p>Ein neues Kostüm und ein neues Halloween-Projekt.</p>
+          <small>31. OKTOBER 2027</small>
         </div>
       </article>
 
       <article class="event">
-        <div class="event-date">
-          <strong>31</strong>
-          <small>OCT</small>
-        </div>
+        <div class="event-icon">✨</div>
         <div>
-          <h3>HALLOWEEN PROJECT</h3>
-          <p>A special annual project. Costumes, creativity and surprises.</p>
-          <div class="event-status">● ANNUAL EVENT</div>
+          <h3>More Events</h3>
+          <p>Neue Ankündigungen und Überraschungen folgen.</p>
+          <small>DATE TBA</small>
         </div>
       </article>
 
@@ -766,124 +719,85 @@ footer p {
   </div>
 </section>
 
-<!-- INDIZIEN -->
-<section class="intel" id="intel">
+<section id="clues">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="mono">04 / INVESTIGATION ROOM</div>
-        <h2>Hidden <span class="red">Clues.</span></h2>
-      </div>
-      <p>Look closer. Not everything is what it seems.</p>
-    </div>
-
-    <div class="intel-box">
-      <span class="tag">CASE FILE #007</span>
-      <h3>THE MISSING INFORMATION</h3>
-
+    <div class="clue-area">
+      <div class="small-label">04 / FINDE DIE HINWEISE</div>
+      <h2>Something is <span>coming.</span></h2>
       <p>
-        There are things you already know. And things you haven't
-        discovered yet. A new project is connected to the number
-        <span class="red">2027</span>.
-        Somewhere between the old and the new,
-        there is another clue.
+        Nicht jeder Hinweis ist offensichtlich.
+        Schau genau hin. Vielleicht entdeckst du etwas,
+        das andere übersehen.
       </p>
-
-      <p>
-        PROJECT STATUS:
-        <span class="red">INVESTIGATION ACTIVE</span>
-      </p>
-
-      <p>
-        Some details remain
-        <span class="red">████████</span>
-        until further notice.
-      </p>
+      <a href="#leaks" class="btn orange">Alle Leaks ansehen ↗</a>
     </div>
   </div>
 </section>
 
-<!-- NEWS -->
 <section id="news">
   <div class="container">
-    <div class="section-head">
+    <div class="section-top">
       <div>
-        <div class="mono">05 / OFFICIAL COMMUNICATION</div>
-        <h2>Latest <span class="red">News.</span></h2>
+        <div class="small-label">05 / UPDATES</div>
+        <h2>Latest <span>News.</span></h2>
       </div>
-      <p>Official announcements and important updates from MAX.</p>
     </div>
 
-    <div class="announcement-list">
+    <div class="news-list">
 
-      <article class="announcement">
+      <article class="news">
+        <div>
+          <h3>MAX OFFICIAL SITE ONLINE!</h3>
+          <p>Die offizielle Website ist eröffnet.</p>
+        </div>
         <time>06.11.2026</time>
-        <div>
-          <h3>MAX OFFICIAL SITE IS ONLINE</h3>
-          <p>The official information platform has opened its doors.</p>
-        </div>
-        <span class="tag">NEW</span>
       </article>
 
-      <article class="announcement">
-        <time>COMING SOON</time>
+      <article class="news">
         <div>
-          <h3>NEW COSTUME INFORMATION</h3>
-          <p>More details about upcoming costume projects will follow.</p>
+          <h3>NEW COSTUME PROJECT</h3>
+          <p>Weitere Details folgen bald.</p>
         </div>
-        <span class="tag grey">PENDING</span>
+        <time>COMING SOON</time>
       </article>
 
-      <article class="announcement">
-        <time>COMING SOON</time>
+      <article class="news">
         <div>
-          <h3>EVENT ANNOUNCEMENT</h3>
-          <p>Stay tuned for the next official announcement.</p>
+          <h3>MORE ANNOUNCEMENTS</h3>
+          <p>Es gibt noch einiges zu entdecken.</p>
         </div>
-        <span class="tag grey">PENDING</span>
+        <time>SOON</time>
       </article>
 
     </div>
   </div>
 </section>
 
-<!-- FINAL -->
-<div class="final-cta">
-  <div class="mono">END OF TRANSMISSION</div>
-  <h2>THE STORY<br><span class="red">CONTINUES.</span></h2>
-  <p>
-    This is only the beginning.<br>
-    More secrets. More projects. More moments.
-  </p>
-  <a class="btn btn-primary" href="#home">BACK TO TOP ↑</a>
+<div class="final">
+  <div class="small-label">MAX OFFICIAL</div>
+  <h2>STAY<br>CURIOUS. 🧡</h2>
+  <p>Das war noch lange nicht alles.</p>
+  <a href="#home" class="btn">Back to top ↑</a>
 </div>
 
 </main>
 
 <footer>
   <div class="footer-inner">
-    <div>
-      <div class="footer-logo">MAX<span>.</span></div>
-      <p>OFFICIAL SITE · EST. 2026</p>
-    </div>
-
-    <p>
-      © 2026 MAX OFFICIAL<br>
-      ALL RIGHTS RESERVED · END OF FILE
-    </p>
-
-    <p>INFORMATION IS SUBJECT TO CHANGE.</p>
+    <div class="footer-logo">MAX<span>.</span></div>
+    <p>© 2026 MAX OFFICIAL · ALL RIGHTS RESERVED</p>
+    <p>MADE WITH CREATIVITY 🧡</p>
   </div>
 </footer>
 
 <script>
 function toggleMenu() {
-  document.getElementById('navlinks').classList.toggle('open');
+  document.getElementById("links").classList.toggle("open");
 }
 
-document.querySelectorAll('.navlinks a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('navlinks').classList.remove('open');
+document.querySelectorAll(".links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("links").classList.remove("open");
   });
 });
 </script>
