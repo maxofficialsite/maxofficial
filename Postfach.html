@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WSDA – Postfach</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #101010;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 35px 20px 15px;
+}
+
+.logo {
+    width: min(300px, 80%);
+    height: auto;
+    object-fit: contain;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 43px);
+    margin: 25px 0 8px;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+main {
+    width: min(750px, 92%);
+    margin: 0 auto 60px;
+}
+
+.panel {
+    background: #191919;
+    border: 1px solid #303030;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 9px;
+}
+
+input, textarea {
+    width: 100%;
+    background: #101010;
+    border: 1px solid #444;
+    border-radius: 7px;
+    padding: 14px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff3865;
+}
+
+textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 7px;
+    padding: 14px 20px;
+    font-size: 15px;
+}
+
+.send {
+    width: 100%;
+    margin-top: 18px;
+    color: white;
+    background: #ff3865;
+}
+
+.send:hover {
+    background: #e92553;
+}
+
+.message {
+    background: #202020;
+    border: 1px solid #353535;
+    border-radius: 9px;
+    padding: 18px;
+    margin-top: 15px;
+    overflow-wrap: anywhere;
+}
+
+.message-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.username {
+    color: #ff6384;
+    font-weight: bold;
+}
+
+.message-date {
+    color: #777;
+    font-size: 12px;
+}
+
+.message-text {
+    color: #eee;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.delete {
+    background: #383838;
+    color: white;
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.delete:hover {
+    background: #a32643;
+}
+
+.empty {
+    text-align: center;
+    color: #888;
+    padding: 30px 10px;
+}
+
+.back {
+    display: block;
+    text-align: center;
+    margin: 35px 0;
+    color: #ff3865;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.notice {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+#status {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #ff6384;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img class="logo" src="WAS SCHAUST DU DA__.png"
+         alt="WAS SCHAUST DU DA??">
+
+    <h1>DAS WSDA-POSTFACH</h1>
+    <p class="subtitle">
+        Deine Tipps. Deine Vermutungen. Deine Nachrichten.
+    </p>
+</header>
+
+<main>
+
+    <section class="panel">
+        <h2>Nachricht einsenden</h2>
+
+        <form id="messageForm">
+            <label for="username">Dein Username</label>
+            <input id="username" maxlength="25"
+                   placeholder="Wie sollen wir dich nennen?"
+                   required>
+
+            <label for="messageText">Deine Nachricht</label>
+            <textarea id="messageText" maxlength="1000"
+                      placeholder="Was glaubst du, was in der Show passiert?"
+                      required></textarea>
+
+            <button class="send" type="submit">
+                NACHRICHT ABSENDEN →
+            </button>
+
+            <div id="status" role="status"></div>
+        </form>
+
+        <p class="notice">
+            Deine Nachricht wird auf diesem Gerät gespeichert.
+            Bitte teile keine privaten Daten.
+        </p>
+    </section>
+
+    <section class="panel">
+        <h2>Die Nachrichten</h2>
+        <div id="messages"></div>
+    </section>
+
+    <a class="back" href="index.html">
+        ← ZURÜCK ZUR SHOW
+    </a>
+
+</main>
+
+<script>
+const STORAGE_KEY = "wsda-postfach-v1";
+const DELETE_CODE = "7794";
+
+const form = document.getElementById("messageForm");
+const messagesContainer = document.getElementById("messages");
+const statusBox = document.getElementById("status");
+
+function getMessages() {
+    try {
+        const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+        return Array.isArray(data) ? data : [];
+    } catch {
+        return [];
+    }
+}
+
+function saveMessages(messages) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+}
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const messageText = document.getElementById("messageText").value.trim();
+
+    if (!username || !messageText) return;
+
+    const messages = getMessages();
+
+    messages.unshift({
+        id: Date.now().toString() + Math.random().toString(16).slice(2),
+        username,
+        text: messageText,
+        date: new Date().toLocaleString("de-DE")
+    });
+
+    try {
+        saveMessages(messages);
+        form.reset();
+        statusBox.textContent = "Deine Nachricht wurde gespeichert!";
+        renderMessages();
+    } catch {
+        statusBox.textContent = "Speichern leider nicht möglich.";
+    }
+});
+
+function renderMessages() {
+    const messages = getMessages();
+    messagesContainer.replaceChildren();
+
+    if (messages.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "Noch keine Nachrichten vorhanden.";
+        messagesContainer.appendChild(empty);
+        return;
+    }
+
+    messages.forEach(message => {
+        const card = document.createElement("article");
+        card.className = "message";
+
+        const top = document.createElement("div");
+        top.className = "message-top";
+
+        const name = document.createElement("span");
+        name.className = "username";
+        name.textContent = message.username;
+
+        const date = document.createElement("span");
+        date.className = "message-date";
+        date.textContent = message.date;
+
+        const content = document.createElement("div");
+        content.className = "message-text";
+        content.textContent = message.text;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete";
+        deleteButton.textContent = "NACHRICHT LÖSCHEN";
+
+        deleteButton.addEventListener("click", function() {
+            const code = prompt("Showleitung-Code eingeben:");
+
+            if (code !== DELETE_CODE) {
+                alert("Falscher Code!");
+                return;
+            }
+
+            const updated = getMessages().filter(item => item.id !== message.id);
+            saveMessages(updated);
+            renderMessages();
+        });
+
+        top.append(name, date);
+        card.append(top, content, deleteButton);
+        messagesContainer.appendChild(card);
+    });
+}
+
+renderMessages();
+</script>
+
+</body>
+</html>
