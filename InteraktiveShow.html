@@ -4,476 +4,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Deine interaktive Show | WAS SCHAUST DU DA??</title>
+<title>Interaktive Show | WAS SCHAUST DU DA??</title>
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    margin: 0;
+    min-height: 100vh;
     background: #101010;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-header {
-    padding: 25px 7%;
-    border-bottom: 1px solid #303030;
+    font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-}
-
-.brand {
-    font-size: 17px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.brand span {
-    color: #ff315e;
-}
-
-.header-label {
-    color: #aaa;
-    font-size: 13px;
-}
-
-main {
-    max-width: 1120px;
-    margin: auto;
-    padding: 65px 25px 90px;
-}
-
-.eyebrow {
-    color: #ff3865;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 17px;
-    text-transform: uppercase;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
 }
 
 h1 {
-    font-size: clamp(36px, 6vw, 58px);
-    letter-spacing: -2px;
-    margin-bottom: 15px;
+    font-size: clamp(27px, 5vw, 42px);
+    margin-bottom: 12px;
 }
 
-.subtitle {
-    color: #aaa;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 45px;
-}
-
-/* STATUS */
-
-.status {
-    background: #191919;
-    border: 1px solid #393939;
-    border-left: 5px solid #ff315e;
-    padding: 27px 30px;
-    border-radius: 7px;
+p {
+    color: #bdbdbd;
+    font-size: 17px;
     margin-bottom: 35px;
 }
 
-.status-top {
-    color: #ff6684;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    margin-bottom: 12px;
-}
-
-.status h2 {
-    font-size: 27px;
-    margin-bottom: 10px;
-}
-
-.status p {
-    color: #aaa;
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-/* QR CODE */
-
-.qr-section {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 35px;
-    align-items: center;
-    background: #191919;
-    border: 1px solid #333;
-    border-radius: 9px;
-    padding: 38px;
-    margin-bottom: 70px;
-}
-
-.qr-text h2 {
-    font-size: 29px;
-    margin-bottom: 17px;
-}
-
-.qr-text p {
-    color: #bbb;
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.qr-code {
-    background: white;
-    padding: 18px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 260px;
-    margin: auto;
-    text-align: center;
-}
-
 #qrcode {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
-}
-
-#qrcode img,
-#qrcode canvas {
-    max-width: 100%;
-    height: auto;
-}
-
-.qr-caption {
-    color: #333;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 12px;
-}
-
-/* SPIELBEREICHE */
-
-.section-heading {
-    font-size: 30px;
-    margin-bottom: 12px;
-}
-
-.section-description {
-    color: #999;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 27px;
-}
-
-.games {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 17px;
-}
-
-.game {
-    background: #191919;
-    border: 1px solid #333;
-    border-radius: 7px;
-    padding: 25px;
-    min-height: 155px;
-    position: relative;
-}
-
-.game-number {
-    color: #ff3865;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 17px;
-}
-
-.game h3 {
-    font-size: 20px;
-    margin-bottom: 9px;
-}
-
-.game p {
-    color: #999;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.locked {
-    color: #ff6684;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-top: 17px;
-}
-
-/* HINWEISE */
-
-.info {
-    margin-top: 65px;
-    padding: 30px;
-    background: #191919;
-    border-radius: 7px;
-}
-
-.info h2 {
-    font-size: 23px;
-    margin-bottom: 13px;
-}
-
-.info p {
-    color: #aaa;
-    font-size: 15px;
-    line-height: 1.8;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
 }
 
 .back {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    border: 1px solid #444;
-    border-radius: 5px;
-    padding: 14px 22px;
     margin-top: 35px;
-    font-size: 14px;
-    transition: background .2s;
+    color: #ff3865;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .back:hover {
-    background: #292929;
-}
-
-footer {
-    border-top: 1px solid #303030;
-    padding: 27px 20px;
-    text-align: center;
-    color: #777;
-    font-size: 13px;
-}
-
-@media (max-width: 700px) {
-    header {
-        padding: 22px 20px;
-    }
-
-    .header-label {
-        display: none;
-    }
-
-    main {
-        padding: 45px 19px 65px;
-    }
-
-    .qr-section {
-        grid-template-columns: 1fr;
-        padding: 25px 20px;
-        gap: 25px;
-    }
-
-    .qr-code {
-        max-width: 240px;
-    }
-
-    .games {
-        grid-template-columns: 1fr;
-    }
-
-    .status {
-        padding: 23px;
-    }
+    text-decoration: underline;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="brand">
-        WAS SCHAUST DU DA?? <span>#WSDA</span>
-    </div>
+<h1>Die Show hat noch nicht begonnen!</h1>
 
-    <div class="header-label">
-        DIE INTERAKTIVE SHOW
-    </div>
-</header>
+<p>Scanne den QR-Code, um fortzufahren.</p>
 
+<div id="qrcode"></div>
 
-<main>
-
-    <div class="eyebrow">Deine Show. Deine Challenges.</div>
-
-    <h1>DEINE INTERAKTIVE SHOW</h1>
-
-    <p class="subtitle">
-        Hier wird aus Zuschauen Mitmachen.
-        Entdecke die digitalen Showaktionen von WAS SCHAUST DU DA??
-    </p>
-
-
-    <!-- SHOW STATUS -->
-
-    <section class="status">
-
-        <div class="status-top">
-            ● SHOWSTATUS
-        </div>
-
-        <h2>Warte ab – die Show findet noch nicht statt!</h2>
-
-        <p>
-            Aktuell ist noch keine Show gestartet.
-            Sobald es losgeht, werden hier die passenden
-            Spiele, Aufgaben und interaktiven Aktionen
-            freigeschaltet.
-        </p>
-
-    </section>
-
-
-    <!-- QR CODE -->
-
-    <section class="qr-section">
-
-        <div class="qr-text">
-
-            <div class="eyebrow">Dein Zugang zur Show</div>
-
-            <h2>SCAN &amp; MACH MIT!</h2>
-
-            <p>
-                Während der Show erscheinen QR-Codes auf dem
-                Bildschirm. Scanne sie mit deinem Smartphone,
-                um direkt zu den passenden Aktionen und
-                Herausforderungen zu gelangen.
-            </p>
-
-            <p>
-                Hier findest du außerdem den zentralen Zugang
-                zu unserer interaktiven Showwelt.
-            </p>
-
-        </div>
-
-        <div class="qr-code">
-            <div id="qrcode">
-                QR-Code wird geladen ...
-            </div>
-            <div class="qr-caption">
-                WAS SCHAUST DU DA?? · #WSDA
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- SPIELBEREICHE -->
-
-    <section>
-
-        <div class="eyebrow">Das Programm</div>
-
-        <h2 class="section-heading">DIE SHOWSPIELE</h2>
-
-        <p class="section-description">
-            Die interaktiven Bereiche werden passend zum
-            jeweiligen Showmoment freigeschaltet.
-        </p>
-
-        <div class="games">
-
-            <div class="game">
-                <div class="game-number">01 · CHALLENGES</div>
-                <h3>Die große Challenge</h3>
-                <p>Stelle dich den Aufgaben aus der laufenden Show.</p>
-                <div class="locked">NOCH NICHT FREIGESCHALTET</div>
-            </div>
-
-            <div class="game">
-                <div class="game-number">02 · WISSEN</div>
-                <h3>Wissensduell</h3>
-                <p>Teste dein Wissen und tritt gegen andere an.</p>
-                <div class="locked">NOCH NICHT FREIGESCHALTET</div>
-            </div>
-
-            <div class="game">
-                <div class="game-number">03 · TEAM</div>
-                <h3>Team gegen Team</h3>
-                <p>Gemeinsam spielen und Herausforderungen meistern.</p>
-                <div class="locked">NOCH NICHT FREIGESCHALTET</div>
-            </div>
-
-            <div class="game">
-                <div class="game-number">04 · SPECIAL</div>
-                <h3>Show-Specials</h3>
-                <p>Besondere Aktionen, Überraschungen und Abstimmungen.</p>
-                <div class="locked">NOCH NICHT FREIGESCHALTET</div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- INFORMATION -->
-
-    <section class="info">
-
-        <h2>WIE FUNKTIONIERT'S?</h2>
-
-        <p>
-            Während der Aufzeichnung werden einzelne
-            interaktive Aktionen angekündigt und per QR-Code
-            zugänglich gemacht. Nach dem Scannen öffnet sich
-            die entsprechende Aufgabe auf deinem Gerät.
-            Je nach Showmoment kannst du mitspielen,
-            abstimmen oder dich einer Challenge stellen.
-            Nicht alle Aktionen sind gleichzeitig verfügbar.
-        </p>
-
-    </section>
-
-
-    <a href="index.html" class="back">
-        ← Zurück zur Sendung
-    </a>
-
-</main>
-
-
-<footer>
-    WAS SCHAUST DU DA?? · #WSDA
-</footer>
-
-
-<!-- QR-CODE GENERATOR -->
+<a class="back" href="index.html">Zurück zur Startseite</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
-const qrContainer = document.getElementById("qrcode");
+const errorUrl = new URL("Error.html", window.location.href).href;
 
-if (window.QRCode) {
-    qrContainer.innerHTML = "";
-
-    new QRCode(qrContainer, {
-        text: window.location.href,
-        width: 210,
-        height: 210,
-        colorDark: "#111111",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-    });
-} else {
-    qrContainer.textContent =
-        "QR-Code konnte nicht geladen werden.";
-}
+new QRCode(document.getElementById("qrcode"), {
+    text: errorUrl,
+    width: 220,
+    height: 220,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+});
 </script>
 
 </body>
