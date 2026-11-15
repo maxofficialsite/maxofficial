@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WAS SCHAUST DU DA?? | YOUR CHANNEL</title>
+
+<title>WAS SCHAUST DU DA?? – YOUR CHANNEL</title>
 
 <style>
 * {
@@ -15,17 +16,15 @@
 
 body {
     background: #101010;
-    color: white;
+    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    width: 100%;
-    padding: 35px 20px 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #101010;
+    padding: 38px 20px;
 }
 
 .logo {
@@ -36,77 +35,134 @@ header {
 }
 
 main {
-    max-width: 1050px;
-    margin: 45px auto;
-    padding: 0 25px;
+    max-width: 1120px;
+    margin: 30px auto 90px;
+    padding: 0 28px;
 }
 
-.section-label {
-    color: #ff315e;
+.eyebrow {
+    color: #ff3865;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 17px;
 }
 
 h1 {
-    font-size: 38px;
-    margin-bottom: 22px;
+    font-size: clamp(34px, 5vw, 52px);
+    letter-spacing: -1.5px;
+    margin-bottom: 30px;
 }
 
-.description {
+.intro {
+    max-width: 1000px;
+    color: #d1d1d1;
     font-size: 18px;
-    line-height: 1.7;
-    color: #d0d0d0;
-    max-width: 850px;
+    line-height: 1.85;
 }
 
 .divider {
     border: 0;
     border-top: 1px solid #333;
-    margin: 55px 0;
+    margin: 75px 0;
 }
 
-.article {
+/* MACH MIT BEREICH */
+
+.participate {
     background: #191919;
-    padding: 35px;
-    border-left: 4px solid #ff315e;
-    border-radius: 4px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 55px 48px;
+    position: relative;
+    overflow: hidden;
 }
 
-.article h2 {
-    font-size: 29px;
-    margin-bottom: 20px;
+.participate::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: #ff3865;
 }
 
-.article p {
-    color: #d0d0d0;
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 15px;
+.participate h2 {
+    font-size: clamp(34px, 5vw, 48px);
+    letter-spacing: -1px;
+    margin-bottom: 17px;
+}
+
+.participate > p {
+    color: #c7c7c7;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 750px;
+    margin-bottom: 35px;
+}
+
+.game-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #242424;
+    border: 1px solid #414141;
+    border-radius: 6px;
+    padding: 27px 30px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.game-link:hover {
+    background: #303030;
+    border-color: #ff3865;
+}
+
+.game-link h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.game-link p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.arrow {
+    color: #ff3865;
+    font-size: 34px;
+    font-weight: bold;
+    flex-shrink: 0;
 }
 
 footer {
     border-top: 1px solid #303030;
-    padding: 25px;
+    padding: 27px 20px;
     text-align: center;
     color: #777;
     font-size: 13px;
-    margin-top: 80px;
 }
 
 @media (max-width: 600px) {
-    h1 {
-        font-size: 29px;
+    main {
+        padding: 0 19px;
     }
 
-    .article {
-        padding: 23px;
+    .participate {
+        padding: 35px 24px;
     }
 
-    .article h2 {
-        font-size: 24px;
+    .game-link {
+        padding: 22px 19px;
+    }
+
+    .game-link h3 {
+        font-size: 18px;
     }
 }
 </style>
@@ -117,7 +173,7 @@ footer {
 <header>
     <img
         src="WAS SCHAUST DU DA__.png"
-        alt="WAS SCHAUST DU DA?? Logo"
+        alt="WAS SCHAUST DU DA??"
         class="logo"
     >
 </header>
@@ -125,46 +181,82 @@ footer {
 <main>
 
     <section>
-        <div class="section-label">Das Spiel</div>
+        <div class="eyebrow">Eine Produktion von YOUR CHANNEL</div>
+
         <h1>WAS SCHAUST DU DA??</h1>
 
-        <p class="description">
-            Was schaust du da?? ist das unterhaltsame Ratespiel
-            von YOUR CHANNEL. Hier geht es um Serien, Filme,
-            bekannte TV-Momente und überraschende Ausschnitte.
-            Wer erkennt die richtige Sendung? Wer kennt die
-            Szene? Und wer liegt komplett daneben?
-            Spannung, Unterhaltung und jede Menge Überraschungen
-            sind garantiert.
+        <p class="intro">
+            WAS SCHAUST DU DA?? – kurz #WSDA – ist das große
+            Unterhaltungsspiel für alle, die Entertainment in
+            seiner ganzen Vielfalt erleben möchten. Das
+            Online-Media-Format verbindet Spiel, Wissen, Comedy
+            und klassische Showunterhaltung zu einem vielseitigen
+            Programm mit wechselnden Themen, überraschenden
+            Momenten und aufwendig inszenierten Showelementen.
+            Von abwechslungsreichen Challenges und spannenden,
+            wissenswerten Geschichten über unterhaltsame
+            Auftritte bis hin zu Musik, Action und eigens
+            gestalteten Werbeeinspielungen bietet jeder
+            Showabend ein neues Unterhaltungserlebnis.
+
+            <br><br>
+
+            Im Mittelpunkt stehen das Ehepaar Elster, das in
+            jeder Ausgabe in unterschiedlichen Kategorien
+            gegeneinander antritt. Neben direkten Duellen gibt
+            es auch gemeinsame Team-Challenges, bei denen
+            Zuschauerinnen und Zuschauer sowie eingeladene
+            Online-Gäste mit den beiden antreten können.
+
+            <br><br>
+
+            Das besondere Konzept: Das Ehepaar Elster kennt
+            weder den Ablauf noch das vollständige Programm
+            des jeweiligen Showabends im Voraus. Welche
+            Herausforderungen, Spiele und Programmpunkte
+            auf sie warten, erfahren sie erst während der
+            laufenden Aufzeichnung – direkt in der Show.
+            Dadurch bleibt jede Ausgabe unvorhersehbar und
+            erhält ihren eigenen, spontanen Charakter.
+
+            <br><br>
+
+            WAS SCHAUST DU DA?? steht für abwechslungsreiche
+            Unterhaltung, überraschende Begegnungen und
+            gemeinsame Erlebnisse. Eine Show, bei der niemand
+            genau weiß, was als Nächstes passiert.
         </p>
     </section>
 
     <hr class="divider">
 
-    <article class="article">
-        <div class="section-label">Artikel</div>
+    <section class="participate">
 
-        <h2>Was schaust du da?? – Das neue Ratespiel</h2>
+        <div class="eyebrow">Dein Auftritt beginnt hier</div>
 
-        <p>
-            Ob bekannte Serien, große Filmklassiker oder
-            überraschende Fernsehmomente: Bei WAS SCHAUST DU DA??
-            dreht sich alles um die Welt des Entertainments.
-        </p>
+        <h2>SHOW – MACH MIT!</h2>
 
         <p>
-            Die Herausforderung klingt einfach: Einen Ausschnitt
-            sehen, genau hinschauen und herausfinden, was dahinter
-            steckt. Doch manchmal ist die Antwort schwieriger,
-            als man zunächst denkt.
+            Du möchtest selbst Teil von WAS SCHAUST DU DA??
+            werden? Entdecke unsere interaktiven Showspiele
+            und stelle dich den Herausforderungen. Hier
+            kannst du mitspielen und dein Können unter Beweis
+            stellen.
         </p>
 
-        <p>
-            Mit spannenden Spielrunden, überraschenden Fragen
-            und jeder Menge Unterhaltung bringt YOUR CHANNEL
-            ein neues Format auf den Bildschirm.
-        </p>
-    </article>
+        <a class="game-link" href="InteraktiveShow.html">
+            <div>
+                <h3>Die interaktiven Showspiele</h3>
+                <p>
+                    Spiele entdecken, Challenges ausprobieren
+                    und selbst Teil der Show werden.
+                </p>
+            </div>
+
+            <span class="arrow">→</span>
+        </a>
+
+    </section>
 
 </main>
 
