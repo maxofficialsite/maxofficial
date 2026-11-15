@@ -2,195 +2,175 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="YOUR CHANNEL – Fernsehen, Shows und Mediathek.">
-  <title>YOUR CHANNEL</title>
-  <style>
-    :root {
-      --ink: #171923;
-      --muted: #6d7280;
-      --line: #e8eaf0;
-      --blue: #1769e8;
-      --red: #ef3e55;
-      --yellow: #ffca32;
-      --surface: #f5f7fb;
-      --white: #fff;
-      font-family: Arial, Helvetica, sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAS SCHAUST DU DA?? | YOUR CHANNEL</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #101010;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    padding: 35px 20px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #101010;
+}
+
+.logo {
+    width: 390px;
+    max-width: 85%;
+    height: auto;
+    object-fit: contain;
+}
+
+main {
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 0 25px;
+}
+
+.section-label {
+    color: #ff315e;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-size: 38px;
+    margin-bottom: 22px;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #d0d0d0;
+    max-width: 850px;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 55px 0;
+}
+
+.article {
+    background: #191919;
+    padding: 35px;
+    border-left: 4px solid #ff315e;
+    border-radius: 4px;
+}
+
+.article h2 {
+    font-size: 29px;
+    margin-bottom: 20px;
+}
+
+.article p {
+    color: #d0d0d0;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+footer {
+    border-top: 1px solid #303030;
+    padding: 25px;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    margin-top: 80px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 29px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); background: var(--white); }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    .topline { height: 5px; background: linear-gradient(90deg, var(--blue) 0 34%, #7c4be8 34% 66%, var(--red) 66% 100%); }
-    .site-header { background: #fff; border-bottom: 1px solid var(--line); }
-    .header-inner { max-width: 1240px; margin: auto; padding: 12px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand-gif { display: block; width: 188px; height: 82px; object-fit: contain; object-position: left center; }
-    .main-nav { display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 700; }
-    .main-nav a { padding: 12px 0; border-bottom: 3px solid transparent; }
-    .main-nav a:hover, .main-nav a:focus-visible { border-color: var(--blue); }
-    .nav-live { color: #fff !important; background: var(--red); border: 0 !important; border-radius: 4px; padding: 11px 17px !important; }
-    .menu-toggle { display: none; border: 0; background: transparent; font-size: 26px; cursor: pointer; }
-    main { max-width: 1240px; margin: auto; padding: 26px 28px 70px; }
-    .hero { min-height: 360px; border-radius: 10px; overflow: hidden; position: relative; display: flex; align-items: end; background: linear-gradient(115deg, #165fe0 0%, #426fe8 45%, #9a4be5 100%); color: #fff; }
-    .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
-    .hero::before { width: 460px; height: 460px; right: 8%; top: -230px; border: 64px solid rgba(255,255,255,.13); }
-    .hero::after { width: 250px; height: 250px; right: 20%; bottom: -175px; background: rgba(255,202,50,.88); }
-    .hero-content { position: relative; z-index: 1; padding: 38px 42px; max-width: 680px; }
-    .hero-kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #ffdf54; }
-    .hero h1 { font-size: clamp(34px, 5vw, 58px); line-height: .98; letter-spacing: -.045em; margin: 0 0 22px; max-width: 600px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border-radius: 4px; font-size: 14px; font-weight: 800; border: 1px solid transparent; cursor: pointer; }
-    .button-light { background: #fff; color: #18213a; }
-    .button-outline { color: #fff; border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
-    .section { margin-top: 42px; }
-    .section-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 17px; }
-    .section-head h2 { font-size: 25px; line-height: 1.1; margin: 0; letter-spacing: -.025em; }
-    .section-link { color: var(--blue); font-weight: 700; font-size: 14px; }
-    .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 17px; }
-    .program-card { min-width: 0; }
-    .thumb { aspect-ratio: 16 / 10; border-radius: 7px; overflow: hidden; position: relative; display: flex; align-items: end; padding: 15px; color: #fff; font-size: 21px; font-weight: 900; letter-spacing: -.03em; }
-    .thumb span { position: relative; z-index: 1; }
-    .thumb::before { content: ""; position: absolute; inset: 0; opacity: .95; }
-    .thumb::after { content: ""; position: absolute; width: 160px; height: 160px; border: 24px solid rgba(255,255,255,.22); border-radius: 50%; right: -35px; top: -65px; }
-    .thumb-one::before { background: linear-gradient(135deg, #f34a66, #ff9a48); }
-    .thumb-two::before { background: linear-gradient(135deg, #1267dc, #4bb9e8); }
-    .thumb-three::before { background: linear-gradient(135deg, #6638c8, #d16bb8); }
-    .thumb-four::before { background: linear-gradient(135deg, #009b8c, #9acb56); }
-    .program-card h3 { margin: 10px 0 3px; font-size: 16px; }
-    .program-card p { margin: 0; color: var(--muted); font-size: 13px; }
-    .category-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .category { min-height: 104px; border-radius: 7px; padding: 19px; display: flex; align-items: end; color: #fff; font-size: 19px; font-weight: 800; }
-    .category:nth-child(1) { background: #ef435d; }
-    .category:nth-child(2) { background: #216be3; }
-    .category:nth-child(3) { background: #7545cb; }
-    .category:nth-child(4) { background: #079b91; }
-    .schedule { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-    .schedule-row { display: grid; grid-template-columns: 90px 1fr auto; align-items: center; gap: 18px; padding: 16px 19px; border-bottom: 1px solid var(--line); }
-    .schedule-row:last-child { border-bottom: 0; }
-    .schedule-time { font-weight: 800; color: var(--blue); }
-    .schedule-name { font-weight: 700; }
-    .schedule-type { color: var(--muted); font-size: 13px; }
-    footer { background: #171923; color: #fff; }
-    .footer-inner { max-width: 1240px; margin: auto; padding: 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-    .footer-brand { font-size: 20px; font-weight: 900; letter-spacing: -.04em; }
-    .footer-links { display: flex; gap: 22px; color: #d4d7df; font-size: 13px; }
-    @media (max-width: 800px) {
-      .header-inner { padding: 8px 18px; }
-      .brand-gif { width: 145px; height: 68px; }
-      .menu-toggle { display: block; }
-      .main-nav { display: none; position: absolute; z-index: 5; top: 86px; left: 0; right: 0; padding: 14px 22px 20px; background: #fff; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 4px; }
-      .main-nav.open { display: flex; }
-      .main-nav a { padding: 12px 4px; }
-      .main-nav .nav-live { text-align: center; }
-      main { padding: 18px 18px 50px; }
-      .hero { min-height: 330px; }
-      .hero-content { padding: 28px 24px; }
-      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 13px; }
-      .category-row { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { padding: 24px 18px; flex-direction: column; align-items: flex-start; }
+
+    .article {
+        padding: 23px;
     }
-    @media (max-width: 430px) {
-      .hero { min-height: 300px; }
-      .hero h1 { font-size: 39px; }
-      .section-head h2 { font-size: 22px; }
-      .schedule-row { grid-template-columns: 60px 1fr; gap: 10px; padding: 14px; }
-      .schedule-type { grid-column: 2; }
-      .footer-links { flex-wrap: wrap; gap: 13px; }
+
+    .article h2 {
+        font-size: 24px;
     }
-  </style>
+}
+</style>
 </head>
+
 <body>
-  <div class="topline"></div>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" aria-label="YOUR CHANNEL Startseite">
-        <img class="brand-gif" src="Animierte YOUR-CHANNEL-Logoenthüllung.gif" alt="YOUR CHANNEL">
-      </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
-      <nav class="main-nav" id="mainNav">
-        <a href="index.html">Startseite</a>
-        <a href="#live">Live</a>
-        <a href="#mediathek">Mediathek</a>
-        <a href="#shows">Sendungen</a>
-        <a href="sendeplan.html">Programm</a>
-        <a class="nav-live" href="#live">LIVE</a>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section class="hero" id="live">
-      <div class="hero-content">
-        <div class="hero-actions">
-          <a class="button button-light" href="#live">LIVE</a>
-          <a class="button button-outline" href="#shows">SENDUNGEN</a>
-        </div>
-      </div>
+
+<header>
+    <img
+        src="WAS SCHAUST DU DA__.png"
+        alt="WAS SCHAUST DU DA?? Logo"
+        class="logo"
+    >
+</header>
+
+<main>
+
+    <section>
+        <div class="section-label">Das Spiel</div>
+        <h1>WAS SCHAUST DU DA??</h1>
+
+        <p class="description">
+            Was schaust du da?? ist das unterhaltsame Ratespiel
+            von YOUR CHANNEL. Hier geht es um Serien, Filme,
+            bekannte TV-Momente und überraschende Ausschnitte.
+            Wer erkennt die richtige Sendung? Wer kennt die
+            Szene? Und wer liegt komplett daneben?
+            Spannung, Unterhaltung und jede Menge Überraschungen
+            sind garantiert.
+        </p>
     </section>
-    <section class="section" id="shows">
-      <div class="section-head">
-        <h2>Sendungen</h2>
-        <a class="section-link" href="#mediathek">Alle ansehen →</a>
-      </div>
-      <div class="cards">
-        <article class="program-card">
-          <div class="thumb thumb-one"><span>SHOW</span></div>
-          <h3>Unterhaltung</h3>
-          <p>Shows &amp; Specials</p>
-        </article>
-        <article class="program-card">
-          <div class="thumb thumb-two"><span>REPORT</span></div>
-          <h3>Reportagen</h3>
-          <p>Menschen &amp; Geschichten</p>
-        </article>
-        <article class="program-card">
-          <div class="thumb thumb-three"><span>STORIES</span></div>
-          <h3>Dokumentationen</h3>
-          <p>Hintergründe &amp; Einblicke</p>
-        </article>
-        <article class="program-card">
-          <div class="thumb thumb-four"><span>WISSEN</span></div>
-          <h3>Wissen</h3>
-          <p>Entdecken &amp; verstehen</p>
-        </article>
-      </div>
-    </section>
-    <section class="section" id="mediathek">
-      <div class="section-head"><h2>Alle Themen</h2></div>
-      <div class="category-row">
-        <a class="category" href="#shows">Entertainment</a>
-        <a class="category" href="#shows">Reportage</a>
-        <a class="category" href="#shows">Dokumentation</a>
-        <a class="category" href="#shows">Wissen</a>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">YOUR CHANNEL</div>
-      <div class="footer-links">
-        <a href="#">Kontakt</a>
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-      </div>
-    </div>
-  </footer>
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.textContent = isOpen ? '×' : '☰';
-    });
-    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      mainNav.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.textContent = '☰';
-    }));
-  </script>
+
+    <hr class="divider">
+
+    <article class="article">
+        <div class="section-label">Artikel</div>
+
+        <h2>Was schaust du da?? – Das neue Ratespiel</h2>
+
+        <p>
+            Ob bekannte Serien, große Filmklassiker oder
+            überraschende Fernsehmomente: Bei WAS SCHAUST DU DA??
+            dreht sich alles um die Welt des Entertainments.
+        </p>
+
+        <p>
+            Die Herausforderung klingt einfach: Einen Ausschnitt
+            sehen, genau hinschauen und herausfinden, was dahinter
+            steckt. Doch manchmal ist die Antwort schwieriger,
+            als man zunächst denkt.
+        </p>
+
+        <p>
+            Mit spannenden Spielrunden, überraschenden Fragen
+            und jeder Menge Unterhaltung bringt YOUR CHANNEL
+            ein neues Format auf den Bildschirm.
+        </p>
+    </article>
+
+</main>
+
+<footer>
+    YOUR CHANNEL · WAS SCHAUST DU DA??
+</footer>
+
 </body>
 </html>
