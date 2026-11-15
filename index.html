@@ -128,6 +128,81 @@ h1 {
     outline-offset: 4px;
 }
 
+/* GEWINNSPIEL */
+
+.giveaway {
+    margin-top: 75px;
+    padding: 55px 35px;
+    background: linear-gradient(145deg, #251016, #171313 65%, #101010);
+    border: 1px solid #713044;
+    border-radius: 12px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.giveaway-label {
+    color: #ff6384;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.giveaway h2 {
+    font-size: clamp(34px, 6vw, 62px);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.giveaway h2 span {
+    color: #ff3865;
+}
+
+.giveaway-description {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.giveaway-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+}
+
+.giveaway-images img {
+    display: block;
+    width: min(420px, 100%);
+    max-height: 280px;
+    object-fit: contain;
+}
+
+.giveaway-info {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 22px;
+    background: rgba(255, 56, 101, 0.08);
+    border: 1px solid #63303d;
+    border-radius: 9px;
+}
+
+.giveaway-info strong {
+    color: #ff6384;
+    letter-spacing: 1px;
+}
+
+.giveaway-info p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
 /* FOOTER */
 
 footer {
@@ -160,6 +235,14 @@ footer {
     .show-button {
         min-height: 75px;
         padding: 18px 14px;
+    }
+
+    .giveaway {
+        padding: 40px 18px;
+    }
+
+    .giveaway-images {
+        gap: 15px;
     }
 }
 </style>
@@ -258,6 +341,54 @@ footer {
         >
             DEINE INTERAKTIVE SHOW – HIER MITMACHEN →
         </a>
+
+    </section>
+
+
+    <!-- FIAT TOPOLINO GEWINNSPIEL -->
+
+    <section class="giveaway">
+
+        <div class="giveaway-label">
+            DAS GROSSE WSDA-GEWINNSPIEL
+        </div>
+
+        <h2>
+            GEWINNE EINEN<br>
+            <span>FIAT TOPOLINO!</span>
+        </h2>
+
+        <p class="giveaway-description">
+            Ein ganz besonderer Hauptgewinn wartet auf dich!
+            Entdecke das große WSDA-Gewinnspiel und erfahre
+            bald mehr über die Teilnahmemöglichkeiten.
+        </p>
+
+        <div class="giveaway-images">
+
+            <img
+                src="Topolino_Seitenansicht-1.png"
+                alt="FIAT Topolino – Seitenansicht"
+            >
+
+            <img
+                src="Fotos_Website_beitrag__14_-removebg-preview.webp"
+                alt="FIAT Topolino – Gewinnspielbild"
+            >
+
+        </div>
+
+        <div class="giveaway-info">
+
+            <strong>DEINE CHANCE. DEIN GEWINN.</strong>
+
+            <p>
+                Weitere Informationen zum Gewinnspiel,
+                den Teilnahmebedingungen und zum Teilnahmebeginn
+                werden rechtzeitig bekannt gegeben.
+            </p>
+
+        </div>
 
     </section>
 
