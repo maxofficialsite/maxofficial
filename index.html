@@ -5,102 +5,143 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WAS SCHAUST DU DA??</title>
+<title>WAS SCHAUST DU DA?? – Offizielle Website</title>
 
 <style>
+:root {
+    --background: #0d0d0f;
+    --surface: #151518;
+    --surface-light: #1b1b20;
+    --border: #303036;
+    --text: #f5f5f6;
+    --muted: #a5a5ad;
+    --accent: #f23862;
+    --accent-hover: #d92b53;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background: #101010;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+html {
+    scroll-behavior: smooth;
 }
 
-/* LOGO */
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
 
 header {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 28px 20px 20px;
+    padding: 30px 20px 25px;
 }
 
 .logo {
-    width: 340px;
+    display: block;
+    width: 320px;
     max-width: 82%;
     height: auto;
     object-fit: contain;
 }
 
-/* INHALT */
+/* MAIN */
 
 main {
-    max-width: 1050px;
-    margin: 25px auto 75px;
-    padding: 0 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 25px 30px 75px;
+}
+
+/* INTRODUCTION */
+
+.intro-section {
+    padding: 20px 0 0;
 }
 
 .eyebrow {
-    color: #ff3865;
-    font-size: 11px;
+    color: var(--accent);
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 2.5px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 13px;
+    margin-bottom: 16px;
 }
 
 h1 {
-    font-size: clamp(32px, 4.5vw, 46px);
-    letter-spacing: -1.2px;
+    font-size: clamp(32px, 4.5vw, 47px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
     line-height: 1.15;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .intro {
-    max-width: 950px;
-    color: #c7c7c7;
-    font-size: 16px;
+    max-width: 900px;
+    color: #c2c2c9;
+    font-size: 15px;
     line-height: 1.9;
+    font-weight: 400;
 }
 
 .intro p + p {
     margin-top: 22px;
 }
 
-/* TRENNLINIE */
+/* DIVIDER */
 
 .divider {
+    height: 1px;
     border: 0;
-    border-top: 1px solid #303030;
-    margin: 55px 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #38383e 15%,
+        #38383e 85%,
+        transparent
+    );
+    margin: 58px 0;
 }
 
-/* MITMACH-BEREICH */
+/* PARTICIPATION */
 
 .participate {
-    background: #181818;
-    border: 1px solid #303030;
+    background: linear-gradient(
+        145deg,
+        #19191e,
+        #141417
+    );
+    border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 38px 30px;
+    padding: 38px 25px;
     text-align: center;
 }
 
+.participate .eyebrow {
+    margin-bottom: 12px;
+}
+
 .participate h2 {
-    font-size: clamp(25px, 4vw, 34px);
+    font-size: clamp(25px, 4vw, 32px);
+    letter-spacing: -0.6px;
     margin-bottom: 12px;
 }
 
 .participate p {
-    color: #bdbdbd;
-    font-size: 15px;
-    line-height: 1.7;
-    max-width: 680px;
+    max-width: 620px;
     margin: 0 auto 25px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
 }
 
 /* BUTTONS */
@@ -109,33 +150,39 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 11px;
+    gap: 10px;
 }
 
 .show-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: min(100%, 490px);
-    min-height: 49px;
-    padding: 12px 20px;
-    background: #ff315e;
-    color: white;
-    border-radius: 6px;
+    width: min(100%, 390px);
+    min-height: 41px;
+    padding: 10px 18px;
+    border-radius: 5px;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: #fff;
     text-decoration: none;
-    font-size: 13px;
+    text-align: center;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.4px;
-    transition: background 0.2s, transform 0.2s;
+    letter-spacing: 0.65px;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .show-button:hover {
-    background: #e9214e;
-    transform: translateY(-2px);
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-1px);
 }
 
 .show-button:active {
-    transform: scale(0.98);
+    transform: scale(0.99);
 }
 
 .show-button:focus-visible {
@@ -144,128 +191,145 @@ h1 {
 }
 
 .program-button {
-    background: #242424;
-    border: 1px solid #484848;
+    background: transparent;
+    border: 1px solid #494950;
+    color: #e6e6e9;
 }
 
 .program-button:hover {
-    background: #353535;
+    background: #25252b;
+    border-color: #777780;
 }
 
-/* GEWINNSPIEL */
+/* GIVEAWAY */
 
 .giveaway {
     margin-top: 55px;
-    padding: 42px 28px;
-    background: linear-gradient(145deg, #251016, #171313 65%, #101010);
-    border: 1px solid #572a38;
+    padding: 42px 30px;
+    border: 1px solid #4c2933;
     border-radius: 12px;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(242, 56, 98, 0.10),
+            transparent 65%
+        ),
+        #151316;
     text-align: center;
-    overflow: hidden;
 }
 
 .giveaway-label {
-    color: #ff6384;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2.5px;
-    margin-bottom: 15px;
+    color: #e96b88;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.7px;
+    margin-bottom: 16px;
 }
 
 .giveaway h2 {
-    font-size: clamp(30px, 5vw, 46px);
-    line-height: 1.15;
-    margin-bottom: 14px;
+    font-size: clamp(29px, 5vw, 43px);
+    line-height: 1.18;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
 }
 
 .giveaway h2 span {
-    color: #ff3865;
+    color: var(--accent);
 }
 
 .giveaway-description {
-    max-width: 650px;
+    max-width: 590px;
     margin: 0 auto;
-    color: #c4c4c4;
-    font-size: 15px;
-    line-height: 1.7;
+    color: #b8b5bb;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-/* BILDER */
+/* TOPOLINO IMAGES */
 
 .giveaway-images {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 28px;
+    gap: 35px;
     margin: 30px auto;
     flex-wrap: wrap;
 }
 
 .giveaway-images img {
     display: block;
-    width: min(280px, 100%);
-    max-height: 185px;
+    width: min(245px, 100%);
+    max-height: 160px;
     object-fit: contain;
 }
 
-/* GEWINNSPIEL INFORMATION */
+/* GIVEAWAY INFORMATION */
 
 .giveaway-info {
-    max-width: 620px;
+    max-width: 570px;
     margin: 0 auto;
     padding: 17px 20px;
-    background: rgba(255, 56, 101, 0.07);
-    border: 1px solid #542b37;
+    border: 1px solid #482a34;
     border-radius: 7px;
+    background: rgba(242, 56, 98, 0.045);
 }
 
 .giveaway-info strong {
-    color: #ff6384;
-    font-size: 12px;
-    letter-spacing: 1px;
+    color: #e96b88;
+    font-size: 10px;
+    letter-spacing: 1.5px;
 }
 
 .giveaway-info p {
-    color: #aaa;
-    font-size: 13px;
-    line-height: 1.6;
+    color: #aaa7ae;
+    font-size: 12px;
+    line-height: 1.7;
     margin-top: 7px;
 }
 
 /* FOOTER */
 
 footer {
-    border-top: 1px solid #292929;
+    border-top: 1px solid #28282d;
     padding: 23px 20px;
     text-align: center;
-    color: #777;
-    font-size: 12px;
-    letter-spacing: 0.7px;
+    color: #74747c;
+    font-size: 11px;
+    letter-spacing: 1px;
 }
 
-/* HANDY */
+/* RESPONSIVE */
 
 @media (max-width: 600px) {
+
     header {
-        padding: 25px 15px 15px;
+        padding: 25px 15px 18px;
     }
 
     .logo {
-        width: 290px;
+        width: 280px;
     }
 
     main {
-        margin-top: 22px;
-        padding: 0 19px;
+        padding: 20px 19px 55px;
+    }
+
+    .intro-section {
+        padding-top: 12px;
     }
 
     h1 {
         font-size: 32px;
+        margin-bottom: 21px;
     }
 
     .intro {
-        font-size: 15px;
-        line-height: 1.8;
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .intro p + p {
+        margin-top: 18px;
     }
 
     .divider {
@@ -276,11 +340,14 @@ footer {
         padding: 30px 18px;
     }
 
+    .participate p {
+        font-size: 13px;
+    }
+
     .show-button {
         width: 100%;
-        min-height: 47px;
-        font-size: 12px;
-        padding: 11px 10px;
+        min-height: 42px;
+        font-size: 10px;
     }
 
     .giveaway {
@@ -294,16 +361,14 @@ footer {
     }
 
     .giveaway-images img {
-        width: min(230px, 100%);
-        max-height: 155px;
+        width: min(220px, 100%);
+        max-height: 145px;
     }
 }
 </style>
 </head>
 
 <body>
-
-<!-- LOGO -->
 
 <header>
     <img
@@ -313,12 +378,11 @@ footer {
     >
 </header>
 
-
 <main>
 
     <!-- SENDUNGSBESCHREIBUNG -->
 
-    <section>
+    <section class="intro-section">
 
         <div class="eyebrow">
             Das große Unterhaltungsspiel
@@ -373,7 +437,7 @@ footer {
     <hr class="divider">
 
 
-    <!-- SHOW MACH MIT -->
+    <!-- INTERAKTIVE SHOW -->
 
     <section class="participate">
 
@@ -396,14 +460,14 @@ footer {
                 href="InteraktiveShow.html"
                 class="show-button"
             >
-                DEINE INTERAKTIVE SHOW – HIER MITMACHEN →
+                DEINE INTERAKTIVE SHOW – HIER MITMACHEN
             </a>
 
             <a
                 href="SendungEins.html"
                 class="show-button program-button"
             >
-                DAS SHOWPROGRAMM – SENDUNG EINS →
+                DAS SHOWPROGRAMM – SENDUNG EINS
             </a>
 
         </div>
@@ -459,9 +523,6 @@ footer {
     </section>
 
 </main>
-
-
-<!-- FOOTER -->
 
 <footer>
     WAS SCHAUST DU DA?? · #WSDA
