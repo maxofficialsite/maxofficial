@@ -14,7 +14,7 @@
     --surface-light: #1b1b20;
     --border: #303036;
     --text: #f5f5f6;
-    --muted: #aaaab2;
+    --muted: #a5a5ad;
     --accent: #e99aaa;
 }
 
@@ -26,7 +26,7 @@
 
 body {
     background:
-        radial-gradient(ellipse at 50% 0%, rgba(233,154,170,.10), transparent 42%),
+        radial-gradient(ellipse at 50% 0%, rgba(233,154,170,.09), transparent 42%),
         var(--background);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
@@ -34,14 +34,14 @@ body {
 }
 
 .page {
-    width: min(100% - 40px, 1050px);
+    width: min(100% - 40px, 1040px);
     margin: auto;
-    padding: 42px 0 55px;
+    padding: 40px 0 55px;
 }
 
 header {
     text-align: center;
-    margin-bottom: 55px;
+    margin-bottom: 48px;
 }
 
 .logo {
@@ -50,82 +50,86 @@ header {
     height: auto;
 }
 
-.label {
-    color: var(--accent);
-    font-size: 10px;
-    letter-spacing: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
 .hero {
     text-align: center;
-    padding: 85px 30px;
+    padding: 78px 28px;
     border: 1px solid var(--border);
-    border-radius: 18px;
+    border-radius: 16px;
     background:
-        linear-gradient(145deg, rgba(233,154,170,.10), transparent 55%),
+        linear-gradient(145deg, rgba(233,154,170,.10), transparent 60%),
         var(--surface);
-    position: relative;
-    overflow: hidden;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background: rgba(233,154,170,.06);
-    filter: blur(70px);
-    top: -180px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
+.eyebrow {
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 23px;
 }
 
 .hero h1 {
-    font-size: clamp(38px, 7vw, 76px);
-    letter-spacing: 3px;
-    line-height: 1.05;
-    margin-bottom: 22px;
+    font-size: clamp(36px, 7vw, 72px);
+    line-height: 1.08;
+    letter-spacing: 2px;
     font-weight: 900;
 }
 
 .hero h1 span {
-    color: var(--accent);
     display: block;
-    font-size: .55em;
-    letter-spacing: 7px;
+    color: var(--accent);
+    font-size: .48em;
+    letter-spacing: 6px;
     margin-bottom: 17px;
 }
 
-.hero-subtitle {
+.hero p {
+    max-width: 610px;
+    margin: 25px auto 0;
     color: var(--muted);
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.8;
-    max-width: 620px;
-    margin: auto;
 }
 
-.hero-meta {
-    margin-top: 32px;
-    color: var(--accent);
+.trailer {
+    margin: 45px 0;
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px solid rgba(233,154,170,.3);
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(233,154,170,.10), transparent 75%), #141316;
+}
+
+.trailer-label {
+    color: var(--muted);
     font-size: 10px;
-    letter-spacing: 3px;
-    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.trailer h2 {
+    font-size: clamp(27px, 5vw, 48px);
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.trailer h2 span {
+    display: block;
+    color: var(--accent);
+}
+
+.trailer-caption {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 19px;
 }
 
 .divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: .55;
-    margin: 55px 0;
+    opacity: .5;
+    margin: 48px 0;
 }
 
 .story {
@@ -133,124 +137,65 @@ header {
     margin: auto;
 }
 
-.story-section {
-    margin-bottom: 52px;
+.story-heading {
+    margin-bottom: 25px;
 }
 
-.story-label {
+.story-heading span {
     color: var(--accent);
     font-size: 10px;
     letter-spacing: 3px;
     font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 15px;
+    display: block;
+    margin-bottom: 13px;
 }
 
-.story h2 {
-    font-size: clamp(25px, 4vw, 36px);
-    line-height: 1.2;
-    margin-bottom: 20px;
+.story-heading h2 {
+    font-size: clamp(25px, 4vw, 35px);
+    line-height: 1.25;
 }
 
-.story p {
+.story-text p {
     color: #c3c3ca;
     font-size: 15px;
-    line-height: 2;
-    margin-bottom: 17px;
-}
-
-.story p strong {
-    color: #fff;
-    font-weight: 700;
-}
-
-.trailer {
-    margin: 55px 0;
-    padding: 48px 35px;
-    text-align: center;
-    border: 1px solid rgba(233,154,170,.35);
-    border-radius: 16px;
-    background:
-        linear-gradient(135deg, rgba(233,154,170,.12), transparent 70%),
-        #141316;
-}
-
-.trailer .trailer-small {
-    color: var(--muted);
-    font-size: 10px;
-    letter-spacing: 4px;
+    line-height: 1.95;
     margin-bottom: 20px;
 }
 
-.trailer h2 {
-    font-size: clamp(30px, 6vw, 55px);
-    letter-spacing: 2px;
-    line-height: 1.1;
-    margin-bottom: 18px;
-}
-
-.trailer h2 span {
-    color: var(--accent);
-    display: block;
-}
-
-.trailer .trailer-caption {
-    color: var(--muted);
-    font-size: 11px;
-    letter-spacing: 3px;
-}
-
-.quote {
-    text-align: center;
-    padding: 38px 20px;
-    margin: 50px 0;
-}
-
-.quote p {
+.story-text strong {
     color: #fff;
-    font-size: clamp(19px, 3vw, 27px);
-    line-height: 1.6;
-    font-weight: 600;
-    font-style: italic;
 }
 
-.quote span {
-    display: block;
-    color: var(--accent);
-    font-size: 10px;
-    letter-spacing: 3px;
-    margin-top: 20px;
-}
-
-.secret {
-    padding: 35px;
+.story-end {
+    margin-top: 42px;
+    padding: 30px;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 12px;
     background: var(--surface);
     text-align: center;
-    margin-top: 50px;
 }
 
-.secret h2 {
-    font-size: 23px;
-    margin-bottom: 14px;
-}
-
-.secret p {
+.story-end p {
     color: var(--muted);
     font-size: 14px;
     line-height: 1.8;
-    max-width: 650px;
-    margin: auto;
+}
+
+.story-end strong {
+    display: block;
+    color: var(--accent);
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 17px;
 }
 
 .back {
     display: block;
     width: fit-content;
-    margin: 50px auto 0;
-    padding: 14px 25px;
+    margin: 45px auto 0;
+    padding: 13px 24px;
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 5px;
     color: #fff;
     text-decoration: none;
     font-size: 10px;
@@ -265,39 +210,39 @@ header {
 }
 
 footer {
-    margin-top: 60px;
-    padding-top: 25px;
+    margin-top: 55px;
+    padding-top: 24px;
     border-top: 1px solid var(--border);
-    color: #777780;
     text-align: center;
+    color: #777780;
     font-size: 10px;
     letter-spacing: 2px;
 }
 
 @media (max-width: 600px) {
     .page {
-        width: min(100% - 28px, 1050px);
+        width: min(100% - 28px, 1040px);
         padding-top: 28px;
     }
 
     header {
-        margin-bottom: 35px;
+        margin-bottom: 32px;
     }
 
     .hero {
-        padding: 65px 20px;
+        padding: 58px 18px;
     }
 
     .trailer {
-        padding: 38px 18px;
+        padding: 34px 15px;
     }
 
-    .story p {
+    .story-text p {
         font-size: 14px;
     }
 
-    .divider {
-        margin: 40px 0;
+    .story-end {
+        padding: 25px 18px;
     }
 }
 </style>
@@ -312,23 +257,29 @@ footer {
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <div class="label">WAS SCHAUST DU DA?? · SENDUNG EINS</div>
+    <div class="eyebrow">WAS SCHAUST DU DA?? · SENDUNG EINS</div>
 
-        <h1>
-            <span>THE FIRST EPISODE</span>
-            THE WEDDING<br>STORY
-        </h1>
+    <h1>
+        <span>THE FIRST EPISODE</span>
+        THE WEDDING<br>STORY
+    </h1>
 
-        <p class="hero-subtitle">
-            Eine Geschichte beginnt. Eine besondere Reise nimmt ihren Lauf.
-            Und ein Showabend steht bevor, der unter einem ganz besonderen
-            Motto erzählt wird.
-        </p>
+    <p>
+        Eine besondere Geschichte, eine Hochzeit und ein Showabend,
+        dessen Ablauf bis zum Schluss geheim bleibt.
+    </p>
+</section>
 
-        <div class="hero-meta">
-            A SHOW NIGHT YOU WON'T EXPECT
-        </div>
+<section class="trailer">
+    <div class="trailer-label">DER OFFIZIELLE SHOW-TRAILER</div>
+
+    <h2>
+        THE WEDDING STORY
+        <span>BACK TO OLD TIMES</span>
+    </h2>
+
+    <div class="trailer-caption">
+        WAS SCHAUST DU DA?? · SENDUNG EINS
     </div>
 </section>
 
@@ -336,114 +287,56 @@ footer {
 
 <main class="story">
 
-    <section class="story-section">
-        <div class="story-label">01 · DER ANFANG</div>
-
-        <h2>Bevor die Show beginnt, beginnt eine Geschichte.</h2>
-
-        <p>
-            Es ist nicht einfach nur ein gewöhnlicher Showabend.
-            Noch bevor die eigentliche Sendung startet, nimmt euch
-            <strong>WAS SCHAUST DU DA??</strong> mit in eine andere Welt.
-            Eine Welt voller Erinnerungen, besonderer Momente und einer
-            Geschichte, die ihren ganz eigenen Anfang hat.
-        </p>
-
-        <p>
-            Alles beginnt mit einem aufwendig inszenierten Opening.
-            Bilder, Atmosphäre und ein ganz besonderer Erzählstil führen
-            Schritt für Schritt in das Thema der ersten Sendung ein.
-            Doch was genau dahintersteckt, wird erst nach und nach deutlich.
-        </p>
-    </section>
-
-    <section class="trailer">
-        <div class="trailer-small">THE OFFICIAL SHOW TRAILER</div>
-
-        <h2>
-            THE WEDDING STORY
-            <span>BACK TO OLD TIMES</span>
-        </h2>
-
-        <div class="trailer-caption">
-            ONE STORY · ONE JOURNEY · ONE UNFORGETTABLE NIGHT
-        </div>
-    </section>
-
-    <section class="story-section">
-        <div class="story-label">02 · DIE REISE</div>
-
-        <h2>Eine Autofahrt. Ein Ziel. Und ein Abend, der näher rückt.</h2>
-
-        <p>
-            Nach dem Opening geht die Geschichte weiter. Die nächste Szene:
-            eine Autofahrt. Die Reise führt in Richtung Showgebäude.
-            Während die Umgebung vorbeizieht, wächst die Vorfreude auf das,
-            was gleich passieren wird.
-        </p>
-
-        <p>
-            Die Fahrt ist mehr als nur der Weg von einem Ort zum anderen.
-            Sie verbindet die erzählte Geschichte mit dem Beginn des
-            eigentlichen Showabends. Die Atmosphäre verändert sich,
-            die Spannung steigt – und schließlich wird das Ziel erreicht.
-        </p>
-
-        <p>
-            <strong>Das Showgebäude.</strong> Hier wartet bereits der nächste
-            Teil der Geschichte. Doch was euch dort erwartet, bleibt vorerst
-            unter Verschluss.
-        </p>
-    </section>
-
-    <div class="quote">
-        <p>
-            „Manchmal beginnt ein außergewöhnlicher Abend
-            lange bevor das erste Spiel gespielt wird.“
-        </p>
-        <span>WAS SCHAUST DU DA??</span>
+    <div class="story-heading">
+        <span>DIE GESCHICHTE DER ERSTEN SENDUNG</span>
+        <h2>Eine Hochzeit. Eine Überraschung. Eine ganz neue Show.</h2>
     </div>
 
-    <section class="story-section">
-        <div class="story-label">03 · DER SHOWABEND</div>
-
-        <h2>Und dann heißt es: Willkommen bei WAS SCHAUST DU DA??</h2>
+    <div class="story-text">
 
         <p>
-            Die Geschichte führt direkt hinein in die erste Ausgabe unserer
-            Online-Unterhaltungssendung. Das Hochzeitsthema bildet dabei
-            den besonderen erzählerischen Rahmen – vom ersten Moment an
-            bis tief in den Showabend hinein.
+            Die Kandidaten wissen nicht, was auf sie zukommt. Sie werden
+            abgeholt und machen sich auf den Weg zu einer neuen Show.
+            Doch was sie zu diesem Zeitpunkt noch nicht wissen:
+            <strong>Ihre eigene Hochzeit wird offiziell noch einmal stattfinden!</strong>
         </p>
 
         <p>
-            Doch <strong>THE WEDDING STORY</strong> ist erst der Anfang.
-            Denn hinter der besonderen Inszenierung wartet ein Abend,
-            dessen Verlauf nicht einfach vorhersehbar ist.
+            WAS SCHAUST DU DA?? bereitet den beiden einen ganz besonderen
+            Showabend vor. Ihre gemeinsame Geschichte wird noch einmal
+            aufgegriffen und bildet den Rahmen für eine außergewöhnliche
+            Hochzeitsreise.
         </p>
 
         <p>
-            Was genau passiert? Welche Momente entstehen? Und welche
-            Überraschungen hält die erste Sendung bereit?
-            Das werdet ihr erst erfahren, wenn es so weit ist.
+            Zum ersten Mal kommt das Entertainment vor die Kamera.
+            Die Kandidaten kennen weder die Showspiele noch den offiziellen
+            Ablauf. Alles, was sie wissen, ist, dass sie abgeholt werden,
+            zum Showgebäude fahren und dort eine völlig neue Show auf sie wartet.
         </p>
-    </section>
+
+        <p>
+            Was genau passieren wird, erfahren sie erst vor Ort.
+            Denn der gesamte Abend wurde hinter ihrem Rücken vorbereitet.
+        </p>
+
+        <p>
+            Seid dabei, wenn wir die Geschichte der beiden noch einmal
+            aufleben lassen und ihre Hochzeit auf eine ganz neue Art feiern.
+        </p>
+
+    </div>
 
 </main>
 
-<div class="divider"></div>
-
-<section class="secret">
-    <div class="story-label">THE STORY CONTINUES</div>
-
-    <h2>Mehr verraten wir noch nicht.</h2>
-
+<section class="story-end">
     <p>
-        Wir möchten noch nicht zu viel über den Ablauf, die einzelnen
-        Showelemente oder die Überraschungen der ersten Sendung verraten.
-        Nur eines steht fest: Der Abend beginnt mit einer Geschichte.
-        Und diese Geschichte führt mitten hinein in WAS SCHAUST DU DA??
+        Die Kandidaten kennen den Ablauf nicht.
+        Die Überraschungen bleiben geheim.
+        Und die Geschichte beginnt erst mit ihrer Ankunft.
     </p>
+
+    <strong>THE WEDDING STORY – BACK TO OLD TIMES</strong>
 </section>
 
 <a href="index.html" class="back">ZURÜCK ZUR ÜBERSICHT</a>
