@@ -5,13 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sendung Eins – THE WEDDING STORY | WAS SCHAUST DU DA??</title>
+<title>WSDA bringt die größte Show ins Internet | WAS SCHAUST DU DA??</title>
 
 <style>
 :root {
     --background: #0d0d0f;
     --surface: #151518;
-    --surface-light: #1b1b20;
     --border: #303036;
     --text: #f5f5f6;
     --muted: #a5a5ad;
@@ -25,174 +24,262 @@
 }
 
 body {
-    background:
-        radial-gradient(ellipse at 50% 0%, rgba(233,154,170,.09), transparent 42%),
-        var(--background);
+    background: var(--background);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
 }
 
 .page {
-    width: min(100% - 40px, 1040px);
+    width: min(100% - 40px, 1050px);
     margin: auto;
-    padding: 40px 0 55px;
+    padding: 35px 0 55px;
 }
 
 header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 35px;
 }
 
 .logo {
-    width: 320px;
+    width: 290px;
     max-width: 80%;
     height: auto;
 }
 
-.hero {
-    text-align: center;
-    padding: 78px 28px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background:
-        linear-gradient(145deg, rgba(233,154,170,.10), transparent 60%),
-        var(--surface);
+.navline {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 13px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 42px;
 }
 
-.eyebrow {
+.navline span:first-child {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.article {
+    max-width: 850px;
+    margin: auto;
+}
+
+.category {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+}
+
+h1 {
+    font-size: clamp(36px, 6vw, 66px);
+    line-height: 1.06;
+    letter-spacing: -1.5px;
+    font-weight: 900;
+    margin-bottom: 22px;
+}
+
+.subtitle {
+    color: #c4c4ca;
+    font-size: 18px;
+    line-height: 1.65;
+    max-width: 760px;
+    margin-bottom: 25px;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: .5px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid var(--border);
+}
+
+.meta .dot {
+    color: var(--accent);
+}
+
+.article-hero {
+    margin: 30px 0 35px;
+    min-height: 330px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 25%, rgba(233,154,170,.18), transparent 60%),
+        linear-gradient(145deg, #21191e, #111114 75%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 45px 25px;
+}
+
+.hero-small {
     color: var(--accent);
     font-size: 10px;
-    letter-spacing: 3px;
     font-weight: bold;
-    margin-bottom: 23px;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
 }
 
-.hero h1 {
-    font-size: clamp(36px, 7vw, 72px);
+.article-hero h2 {
+    font-size: clamp(32px, 6vw, 60px);
     line-height: 1.08;
     letter-spacing: 2px;
     font-weight: 900;
 }
 
-.hero h1 span {
+.article-hero h2 span {
     display: block;
     color: var(--accent);
-    font-size: .48em;
-    letter-spacing: 6px;
-    margin-bottom: 17px;
-}
-
-.hero p {
-    max-width: 610px;
-    margin: 25px auto 0;
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.trailer {
-    margin: 45px 0;
-    padding: 40px 20px;
-    text-align: center;
-    border: 1px solid rgba(233,154,170,.3);
-    border-radius: 14px;
-    background: linear-gradient(135deg, rgba(233,154,170,.10), transparent 75%), #141316;
-}
-
-.trailer-label {
-    color: var(--muted);
-    font-size: 10px;
+    font-size: .58em;
+    margin-top: 12px;
     letter-spacing: 4px;
-    margin-bottom: 18px;
 }
 
-.trailer h2 {
-    font-size: clamp(27px, 5vw, 48px);
-    letter-spacing: 2px;
-    line-height: 1.2;
-}
-
-.trailer h2 span {
-    display: block;
-    color: var(--accent);
-}
-
-.trailer-caption {
-    color: var(--muted);
+.hero-bottom {
+    margin-top: 27px;
+    color: #c0b5ba;
     font-size: 10px;
-    letter-spacing: 2px;
-    margin-top: 19px;
+    letter-spacing: 3px;
 }
 
-.divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: .5;
-    margin: 48px 0;
-}
-
-.story {
-    max-width: 790px;
+.article-body {
+    max-width: 760px;
     margin: auto;
 }
 
-.story-heading {
-    margin-bottom: 25px;
+.article-body p {
+    color: #c7c7ce;
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 22px;
 }
 
-.story-heading span {
+.article-body strong {
+    color: #fff;
+}
+
+.article-body h2 {
+    font-size: 27px;
+    line-height: 1.25;
+    margin: 43px 0 18px;
+    letter-spacing: -.3px;
+}
+
+.article-body h2::before {
+    content: "";
+    display: block;
+    width: 38px;
+    height: 3px;
+    background: var(--accent);
+    margin-bottom: 16px;
+}
+
+.article-body h3 {
+    font-size: 19px;
+    margin: 32px 0 13px;
+}
+
+.highlight {
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    margin: 35px 0;
+    background: #171619;
+}
+
+.highlight p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 600;
+    margin: 0;
+}
+
+.trailer-card {
+    text-align: center;
+    border: 1px solid rgba(233,154,170,.35);
+    border-radius: 12px;
+    padding: 38px 20px;
+    margin: 42px 0;
+    background: linear-gradient(140deg, rgba(233,154,170,.10), transparent 75%), #151417;
+}
+
+.trailer-card .label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 17px;
+}
+
+.trailer-card h2 {
+    font-size: clamp(26px, 5vw, 45px);
+    line-height: 1.15;
+    letter-spacing: 2px;
+}
+
+.trailer-card h2::before {
+    display: none;
+}
+
+.trailer-card h2 span {
+    display: block;
+    color: var(--accent);
+}
+
+.trailer-card p {
+    margin: 18px 0 0;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.article-end {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.article-end .end-label {
     color: var(--accent);
     font-size: 10px;
     letter-spacing: 3px;
     font-weight: bold;
-    display: block;
-    margin-bottom: 13px;
+    margin-bottom: 15px;
 }
 
-.story-heading h2 {
-    font-size: clamp(25px, 4vw, 35px);
-    line-height: 1.25;
+.article-end h2 {
+    font-size: 25px;
+    margin-bottom: 14px;
 }
 
-.story-text p {
-    color: #c3c3ca;
-    font-size: 15px;
-    line-height: 1.95;
-    margin-bottom: 20px;
-}
-
-.story-text strong {
-    color: #fff;
-}
-
-.story-end {
-    margin-top: 42px;
-    padding: 30px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--surface);
-    text-align: center;
-}
-
-.story-end p {
+.article-end p {
     color: var(--muted);
     font-size: 14px;
     line-height: 1.8;
-}
-
-.story-end strong {
-    display: block;
-    color: var(--accent);
-    font-size: 18px;
-    letter-spacing: 1px;
-    margin-top: 17px;
 }
 
 .back {
     display: block;
     width: fit-content;
-    margin: 45px auto 0;
+    margin: 40px auto 0;
     padding: 13px 24px;
     border: 1px solid var(--border);
     border-radius: 5px;
@@ -213,36 +300,43 @@ footer {
     margin-top: 55px;
     padding-top: 24px;
     border-top: 1px solid var(--border);
-    text-align: center;
     color: #777780;
+    text-align: center;
     font-size: 10px;
     letter-spacing: 2px;
 }
 
 @media (max-width: 600px) {
     .page {
-        width: min(100% - 28px, 1040px);
-        padding-top: 28px;
+        width: min(100% - 28px, 1050px);
+        padding-top: 25px;
     }
 
-    header {
-        margin-bottom: 32px;
+    .navline {
+        gap: 12px;
+        font-size: 9px;
+        letter-spacing: 1px;
     }
 
-    .hero {
-        padding: 58px 18px;
+    .subtitle {
+        font-size: 16px;
     }
 
-    .trailer {
-        padding: 34px 15px;
+    .article-hero {
+        min-height: 260px;
+        padding: 35px 15px;
     }
 
-    .story-text p {
+    .article-body p {
         font-size: 14px;
     }
 
-    .story-end {
-        padding: 25px 18px;
+    .article-body h2 {
+        font-size: 24px;
+    }
+
+    .highlight {
+        padding: 18px;
     }
 }
 </style>
@@ -256,88 +350,175 @@ footer {
     <img src="WAS SCHAUST DU DA__.png" class="logo" alt="WAS SCHAUST DU DA??">
 </header>
 
-<section class="hero">
-    <div class="eyebrow">WAS SCHAUST DU DA?? · SENDUNG EINS</div>
+<div class="navline">
+    <span>WSDA NEWS</span>
+    <span>ENTERTAINMENT</span>
+    <span>SENDUNG EINS</span>
+</div>
 
-    <h1>
-        <span>THE FIRST EPISODE</span>
-        THE WEDDING<br>STORY
-    </h1>
+<main class="article">
 
-    <p>
-        Eine besondere Geschichte, eine Hochzeit und ein Showabend,
-        dessen Ablauf bis zum Schluss geheim bleibt.
+    <div class="category">DIE GROSSE SHOW-PREMIERE</div>
+
+    <h1>WAS SCHAUST DU DA bringt die größte Show ins Internet!</h1>
+
+    <p class="subtitle">
+        Eine Hochzeit wird noch einmal gefeiert, zwei Kandidaten erleben
+        einen Abend voller Überraschungen und ein völlig neues
+        Entertainment-Format geht erstmals vor die Kamera.
     </p>
-</section>
 
-<section class="trailer">
-    <div class="trailer-label">DER OFFIZIELLE SHOW-TRAILER</div>
-
-    <h2>
-        THE WEDDING STORY
-        <span>BACK TO OLD TIMES</span>
-    </h2>
-
-    <div class="trailer-caption">
-        WAS SCHAUST DU DA?? · SENDUNG EINS
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<main class="story">
-
-    <div class="story-heading">
-        <span>DIE GESCHICHTE DER ERSTEN SENDUNG</span>
-        <h2>Eine Hochzeit. Eine Überraschung. Eine ganz neue Show.</h2>
+    <div class="meta">
+        <span>WAS SCHAUST DU DA??</span>
+        <span class="dot">●</span>
+        <span>SENDUNG EINS</span>
+        <span class="dot">●</span>
+        <span>THE WEDDING STORY</span>
     </div>
 
-    <div class="story-text">
+    <section class="article-hero">
+        <div class="hero-small">DIE ERSTE AUSGABE VON WSDA</div>
+
+        <h2>
+            THE WEDDING STORY
+            <span>BACK TO OLD TIMES</span>
+        </h2>
+
+        <div class="hero-bottom">
+            EINE HOCHZEIT · EINE SHOW · EIN UNVERGESSLICHER ABEND
+        </div>
+    </section>
+
+    <div class="article-body">
 
         <p>
-            Die Kandidaten wissen nicht, was auf sie zukommt. Sie werden
-            abgeholt und machen sich auf den Weg zu einer neuen Show.
-            Doch was sie zu diesem Zeitpunkt noch nicht wissen:
-            <strong>Ihre eigene Hochzeit wird offiziell noch einmal stattfinden!</strong>
+            <strong>WAS SCHAUST DU DA?? startet mit einer ganz besonderen
+            ersten Sendung.</strong> Was zunächst wie eine gewöhnliche
+            Abholung beginnt, entwickelt sich zu einer Überraschung,
+            die die Kandidaten so nicht erwarten. Denn hinter den
+            Kulissen wird bereits an einem ganz besonderen Abend gearbeitet:
+            Ihre eigene Hochzeit soll offiziell noch einmal stattfinden!
         </p>
 
         <p>
-            WAS SCHAUST DU DA?? bereitet den beiden einen ganz besonderen
-            Showabend vor. Ihre gemeinsame Geschichte wird noch einmal
-            aufgegriffen und bildet den Rahmen für eine außergewöhnliche
-            Hochzeitsreise.
+            Mit <strong>THE WEDDING STORY – BACK TO OLD TIMES</strong>
+            bringt WSDA seine erste große Showproduktion vor die Kamera.
+            Im Mittelpunkt steht die gemeinsame Geschichte der beiden
+            Kandidaten, die an diesem Abend noch einmal auf eine ganz
+            besondere Art gefeiert wird.
+        </p>
+
+        <h2>Alles beginnt mit einer Abholung</h2>
+
+        <p>
+            Die Kandidaten wissen zunächst nicht, worum es geht.
+            Sie werden abgeholt und machen sich auf den Weg.
+            Wohin die Reise führt und was sie dort erwartet, bleibt
+            zunächst geheim.
         </p>
 
         <p>
-            Zum ersten Mal kommt das Entertainment vor die Kamera.
-            Die Kandidaten kennen weder die Showspiele noch den offiziellen
-            Ablauf. Alles, was sie wissen, ist, dass sie abgeholt werden,
-            zum Showgebäude fahren und dort eine völlig neue Show auf sie wartet.
+            Dann beginnt die Fahrt zum Showgebäude. Während die beiden
+            noch nicht wissen, was hinter den Kulissen vorbereitet wurde,
+            rückt der große Moment immer näher. Die Ankunft markiert
+            den Beginn einer völlig neuen Erfahrung.
         </p>
 
         <p>
-            Was genau passieren wird, erfahren sie erst vor Ort.
-            Denn der gesamte Abend wurde hinter ihrem Rücken vorbereitet.
+            Mit der Einfahrt in das Showgebäude beginnt schließlich
+            der nächste Teil des Abends. Aus der zunächst geheimnisvollen
+            Abholung wird eine Reise mitten hinein in die erste WSDA-Show.
+        </p>
+
+        <div class="trailer-card">
+            <div class="label">DER OFFIZIELLE SHOW-TRAILER</div>
+
+            <h2>
+                THE WEDDING STORY
+                <span>BACK TO OLD TIMES</span>
+            </h2>
+
+            <p>WAS SCHAUST DU DA?? · SENDUNG EINS</p>
+        </div>
+
+        <h2>Ihre Hochzeit. Noch einmal. Aber diesmal ganz anders.</h2>
+
+        <p>
+            Die Überraschung: Die Hochzeit der beiden findet offiziell
+            noch einmal statt. WSDA stellt dafür einen eigenen Showabend
+            auf die Beine und macht die gemeinsame Geschichte zum Mittelpunkt
+            der Sendung.
         </p>
 
         <p>
-            Seid dabei, wenn wir die Geschichte der beiden noch einmal
-            aufleben lassen und ihre Hochzeit auf eine ganz neue Art feiern.
+            Dabei geht es nicht einfach nur um eine Wiederholung.
+            Die Hochzeit wird zum Rahmen einer eigens produzierten
+            Unterhaltungssendung. Erinnerungen und die Geschichte der
+            beiden treffen auf ein völlig neues Showkonzept.
+        </p>
+
+        <h2>Keiner kennt den Ablauf – nicht einmal die Kandidaten</h2>
+
+        <p>
+            Zum ersten Mal kommt das Entertainment von WAS SCHAUST DU DA??
+            vor die Kamera. Die Kandidaten kennen keines der vorbereiteten
+            Showspiele. Auch der offizielle Ablauf ist ihnen nicht bekannt.
+            Sie wissen nicht, was als Nächstes passiert oder welche
+            Überraschungen noch auf sie warten.
+        </p>
+
+        <p>
+            Der gesamte Abend wurde hinter ihrem Rücken vorbereitet.
+            Erst im Laufe der Sendung erfahren die beiden, was tatsächlich
+            geplant wurde. Genau das macht diese erste Ausgabe so besonders:
+            Die Reaktionen sind echt, die Überraschungen bleiben geheim
+            und selbst die Kandidaten erleben die Show zum ersten Mal.
+        </p>
+
+        <div class="highlight">
+            <p>
+                Fest steht nur: Die Abholung, die Fahrt zum Showgebäude
+                und eine Hochzeitsreise, die es so kein zweites Mal gibt.
+            </p>
+        </div>
+
+        <h2>Eine Geschichte, die noch einmal erzählt wird</h2>
+
+        <p>
+            Mit der ersten Sendung möchte WAS SCHAUST DU DA??
+            nicht einfach nur eine Show starten. Die Geschichte der
+            beiden soll noch einmal aufleben – diesmal vor der Kamera
+            und gemeinsam mit einem eigens dafür vorbereiteten
+            Showabend.
+        </p>
+
+        <p>
+            Die Zuschauer begleiten die Reise von den ersten Momenten
+            der Abholung bis hinein in die Show. Was genau dort passiert,
+            welche Spiele vorbereitet wurden und wie der Abend verläuft,
+            bleibt allerdings vorerst geheim.
+        </p>
+
+        <p>
+            Eines ist sicher: Die erste Sendung steht ganz im Zeichen
+            einer Hochzeit, die noch einmal gefeiert wird – und einer
+            Show, die für alle Beteiligten eine Überraschung bereithält.
         </p>
 
     </div>
+
+    <section class="article-end">
+        <div class="end-label">DEMNÄCHST BEI WAS SCHAUST DU DA??</div>
+
+        <h2>THE WEDDING STORY – BACK TO OLD TIMES</h2>
+
+        <p>
+            Die Vorbereitungen laufen. Die Kandidaten ahnen noch nicht,
+            was sie erwartet. Und die Geschichte beginnt schon bald.
+        </p>
+    </section>
 
 </main>
-
-<section class="story-end">
-    <p>
-        Die Kandidaten kennen den Ablauf nicht.
-        Die Überraschungen bleiben geheim.
-        Und die Geschichte beginnt erst mit ihrer Ankunft.
-    </p>
-
-    <strong>THE WEDDING STORY – BACK TO OLD TIMES</strong>
-</section>
 
 <a href="index.html" class="back">ZURÜCK ZUR ÜBERSICHT</a>
 
